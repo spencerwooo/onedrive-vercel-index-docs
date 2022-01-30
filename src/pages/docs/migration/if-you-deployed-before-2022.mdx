@@ -1,1 +1,18 @@
 # If you deployed before 2022
+
+A breaking change was introduced in 2022. Starting from [this announcement](https://github.com/spencerwooo/onedrive-vercel-index/discussions/215), you would not need to generate your own authentication tokens such as `client_id`, `client_secret`, etc.
+
+You can either start from scratch (which is painstakingly simple) - [Getting started](/docs/getting-started), or migrate to this latest version with a new OAuth process.
+
+## Migrating from an old project
+
+- You need to first create a Redis instance, and define the URL of the instance in the environment variable `REDIS_URL` in Vercel. You can use [Upstash](https://vercel.com/integrations/upstash) for this.
+- You need to revert some fields of your customised `config/api.config.js` back, where specifically the `clientId` and `obfuscatedClientSecret` should exactly match:
+
+  ```js
+  clientId: "d87bcc39-1750-4ca0-ad54-f8d0efbb2735",
+  obfuscatedClientSecret: "U2FsdGVkX1830zo3/pFDqaBCVBb37iLw3WnBDWGF9GIB2f4apzv0roemp8Y+iIxI3Ih5ecyukqELQEGzZlYiWg=="
+  ```
+
+- You also need to define `userPrincipalName` inside `config/site.config.js`, which is used to verify your identity when doing OAuth. **It is usually your Microsoft email address.**
+- You can safely delete old environment variables such as your own `CLIENT_SECRET`, `ACCESS_TOKEN`, and `REFRESH_TOKEN`.

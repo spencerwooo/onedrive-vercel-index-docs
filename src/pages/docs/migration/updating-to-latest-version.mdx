@@ -1,1 +1,30 @@
 # Updating to the latest version
+
+Basically, you are syncing a fork of a repository to keep your repository up-to-date with my upstream repository. So, check out [GitHub - Syncing a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
+
+## From the Web UI
+
+- On GitHub, navigate to the main page of the forked repository that you want to sync with the upstream repository.
+- Select the Fetch upstream drop-down.
+- Review the details about the commits from the upstream repository, then click Fetch and merge.
+- If the changes from the upstream repository cause conflicts, GitHub will prompt you to create a pull request to resolve the conflicts.
+
+## Command line
+
+Clone the forked repo locally and:
+
+```bash
+# Fetch upstream changes
+git fetch upstream
+
+# Checkout your fork's local default branch - main
+git checkout main
+
+# Merge upstream changes into your fork
+git merge upstream/main
+
+# If there are conflicts - manually resolve them locally
+# Commit changes and push to GitHub
+git commit -m "xxx"
+git push
+```
