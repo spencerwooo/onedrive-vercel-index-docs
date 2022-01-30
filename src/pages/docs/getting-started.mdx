@@ -90,7 +90,19 @@ Create a Redis database, and set the URL of the Redis instance to environment va
 - You can use **Upstash** for this, completely free, full integration with Vercel, documentation here: [Vercel Integration](https://docs.upstash.com/redis/howto/vercelintegration) (ignore the final step _Create Your Redis Client_, that is already taken care of in onedrive-vercel-index).
 - You can also host any Redis server, use AWS, Google Cloud, Azure, etc. As long as you have a Redis URL that Vercel can use.
 
-Whatever method you use, you should have a `REDIS_URL` present in your environment variable in Vercel.
+Whatever method you use, you should have a `REDIS_URL` present in your environment variable in Vercel which should look like:
+
+```
+redis://:xxx...@some-thing-like-35533.upstash.io:35533
+```
+
+or:
+
+```
+rediss://:xxx...@some-thing-like-35533.upstash.io:35533
+```
+
+if you [enabled TLS (SSL)](https://docs.upstash.com/redis/howto/connectwithtls) on your upstash database.
 
 ![Using Upstash as the free Redis database for onedrive-vercel-index]( ./_images/getting-started/upstash-redis.png)
 
