@@ -1,16 +1,11 @@
+import Logo from './components/logo'
+
 export default {
   github: 'https://github.com/spencerwooo/onedrive-vercel-index',
   docsRepositoryBase:
     'https://github.com/spencerwooo/onedrive-vercel-index-docs/tree/main/src/pages',
   titleSuffix: ' - OneDrive Vercel Index',
-  logo: (
-    <>
-      <span className="font-extrabold">onedrive-vercel-index</span>
-      <span className="mr-2 ml-2 text-gray-500 font-normal hidden md:inline">
-        indexing your onedrive since 2020
-      </span>
-    </>
-  ),
+  logo: <Logo />,
   head: (
     <>
       <meta name="msapplication-TileColor" content="#ffffff" />
@@ -19,12 +14,15 @@ export default {
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="description" content="OneDrive Vercel Index" />
       <meta name="apple-mobile-web-app-title" content="OneDrive Vercel Index" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
     </>
   ),
   search: true,
   font: false,
   unstable_stork: true,
-  unstable_faviconGlyph: '✦',
   prevLinks: true,
   nextLinks: true,
   floatTOC: true,

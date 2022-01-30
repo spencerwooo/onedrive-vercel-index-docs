@@ -1,0 +1,15 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem 0 0.5rem;
+}
+.logo__title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.logo__subtitle {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgb(107 114 128);
+}
