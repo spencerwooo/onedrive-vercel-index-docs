@@ -10,6 +10,10 @@ body {
     Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .dark .invert-on-dark {
   filter: invert(1) brightness(1.8);
 }
