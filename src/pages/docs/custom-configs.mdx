@@ -1,1 +1,106 @@
+import Callout from 'nextra-theme-docs/callout'
+import Bleed from 'nextra-theme-docs/bleed'
+import Video from '../../components/video'
+
 # Custom configurations
+
+There are two config files: `config/api.config.js` and `config/site.config.js`.
+
+- `config/api.config.js` - is used to define your API endpoints and tokens. **OneDrive international users don't have to change anything.**
+- `config/site.config.js` - is used for customising the website, such as the folder to share, the title, used Google fonts, site icons, contact info, etc.
+
+## Configuring custom API settings
+
+Only make changes here if you think you have to.
+
+- If you are not the admin of your OneDrive account (which may happen to OneDrive business, educational or E5 subscription accounts), you may need to define your own `clientId` and `obfuscatedClientSecret`. More on this here [Using your own client id and secret](todo).
+- If you are a OneDrive 世纪互联 user, you should change `authApi` and `driveApi` (which you should have already done so in [Getting started - Modify API settings](./getting-started#modify-api-settings-optional-1)).
+
+{/* you may also need to change `directLinkRegex` to use the proxied download functions. Check here [Proxied download (disabled)](todo). */}
+
+## Customising your website
+
+A couple of configurations are extracted for you to customise your site, these customisations live in `config/site.config.js`.
+
+### `userPrincipalName`
+
+You have already defined this in [Getting started](./getting-started#customise-site-settings) for the OAuth process.
+
+### `icon` - Icons and favicons
+
+![Customising your site's icons and favicons](./images/custom-configs/customising-icons.png)
+
+`icon` - is the website icon to the left of the title inside the navigation bar. **It should be placed under the [`/public`](https://github.com/spencerwooo/onedrive-vercel-index/tree/main/public) directory of your GitHub project (not your OneDrive folder!)**, and referenced here by its relative path to `/public`.
+
+For example, if your onedrive-vercel-index's GitHub project's `/public` directory holds:
+
+```
+.
+├── favicon-16x16.png
+├── favicon-32x32.png
+├── favicon.ico
+├── icons
+│   └── 64.png
+└── ...
+```
+
+And say you want to use `64.png` as your website's icon, then you should change `icon` in `site.config.js` to `/icons/64.png`, and you should be good to go. The favicons of your website should also be placed here under `/public` directly, you can use [favicon.io](http://favicon.io) to generate favicons with your image, and replace the favicons set in the main project.
+
+### `title` - Site title
+
+The name of your website. Present alongside your icon.
+
+### `baseDirectory`
+
+The folder that you are to share publicly with onedrive-vercel-index. You should have already defined this.
+
+### `maxItems`
+
+`maxItems` - represents the maximum number of items that one directory lists, pagination supported. This is limited up to 200 items by the upstream OneDrive API.
+
+<Callout emoji="➡️">
+  Try pagination here: [https://drive.spencerwoo.com/🥟 Some test
+  files/Imagenette](https://drive.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/Imagenette).
+</Callout>
+
+### `googleFont` - Custom font family
+
+We use Google Font natively for font customisations.
+
+- `googleFontSans` - the sans serif font used in onedrive-vercel-index.
+- `googleFontMono` - the monospace font used in onedrive-vercel-index.
+- `googleFontLinks` - an array of links for referencing the google font assets.
+
+You can check and generate the required links and names at [fonts.google.com](https://fonts.google.com/).
+
+### `footer`
+
+The footer component of your website. You can write HTML here, but you need to escape double quotes - changing `"` to `\"`. You can write anything here, and if you like badges, generate some with [shields.io](http://shields.io) 😃
+
+### `protectedRoutes`
+
+This is where you specify the folders that are password protected. It is an array of paths pointing to all the directories in which you have `.password` set. More on this in [Password protected folders](todo).
+
+### `email`
+
+`email` - is optional, and can be removed should you wish - by only leaving a `""` here.
+
+```diff
+- "email": "mailto:spencer.wushangbo@gmail.com",
++ "email": "",
+```
+
+However, I suggest adding some form of contact for your website.
+
+### `links`
+
+`links` - is an array of `{ "name": "xxx", "link": "xxx" }`. In the latest update, all brand icons inside Font Awesome is supported and the icon to render is based on the `name` you provide. See the demo screen recording below.
+
+<Callout emoji="💦">
+  The additional links in the demo video are generated automatically by GitHub Copilot and may not be my personal
+  account.
+</Callout>
+
+<Video src="/videos/links-copilot-demo-video.mp4" ratio={810 / 1556} />
+
+For a full list of supported brand icons, visit: [Brand Icons | Font Awesome](https://fontawesome.com/icons?s=brands).

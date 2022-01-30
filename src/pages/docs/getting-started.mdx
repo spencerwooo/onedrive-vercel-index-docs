@@ -48,7 +48,7 @@ Modify [`config/site.config.js`](https://github.com/spencerwooo/onedrive-vercel-
 ![You must change these two configs for your deployment to work](./images/getting-started/change-site-config-js.png)
 
 <Callout emoji="🍀">
-  There are other optional configs for customising your site, please refer to [Custom configs](./custom-configs) for
+  There are other optional configs for customising your site, please refer to [Custom configs](./custom-configs) for
   what they do.
 </Callout>
 
@@ -87,7 +87,7 @@ The deployment is likely to fail as you have not added the environment variable 
 
 Create a Redis database, and set the URL of the Redis instance to environment variable `REDIS_URL` inside the Vercel project. The Redis database is used for storing the required `access_tokens` and `refresh_tokens` when interfacing with OneDrive's API.
 
-- You can use **Upstash** for this, completely free, full integration with Vercel, documentation here: [Vercel Integration](https://docs.upstash.com/redis/howto/vercelintegration) (ignore the final step _Create Your Redis Client_, that is already taken care of in onedrive-vercel-index).
+- You can use **Upstash** for this, completely free, full integration with Vercel, documentation here: [Vercel Integration](https://docs.upstash.com/redis/howto/vercelintegration) (ignore the final step _Create Your Redis Client_, that is already taken care of in onedrive-vercel-index).
 - You can also host any Redis server, use AWS, Google Cloud, Azure, etc. As long as you have a Redis URL that Vercel can use.
 
 Whatever method you use, you should have a `REDIS_URL` present in your environment variable in Vercel.
