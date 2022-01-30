@@ -19,7 +19,7 @@ The deployed onedrive-vercel-index will guide you through an authorisation proce
 
 onedrive-vercel-index uses your OneDrive as a storage host, and displays the files, images, videos, songs, and documents stored inside your OneDrive for other people to preview and download.
 
-![Screenshots of onedrive-vercel-index on multiple platforms](./images/getting-started/od-vercel-idx.png)
+![Screenshots of onedrive-vercel-index on multiple platforms]( ./_images/getting-started/od-vercel-idx.png)
 
 onedrive-vercel-index is actually a template built with Next.js, which you can host on Vercel, Netlify, or other serverless platforms completely for free. Here's how you would deploy your own onedrive-vercel-index **completely from scratch**.
 
@@ -32,7 +32,7 @@ onedrive-vercel-index is actually a template built with Next.js, which you can h
 
 Fork the project to your own GitHub account, as you will be maintaining your custom version of this project with your own configurations.
 
-![Fork the repo to your own GitHub account](./images/getting-started/fork-repo.png)
+![Fork the repo to your own GitHub account]( ./_images/getting-started/fork-repo.png)
 
 ## Modify configs
 
@@ -45,7 +45,7 @@ Modify [`config/site.config.js`](https://github.com/spencerwooo/onedrive-vercel-
 - `userPrincipalName` - used to verify your identity when doing OAuth. It is usually your _Microsoft email address_ when you log into your OneDrive.
 - `baseDirectory` - the base folder shared using onedrive-vercel-index. You must make sure that the folder exists inside your OneDrive. (You can also create a folder named `Public` in your OneDrive to keep things same with the main project.)
 
-![You must change these two configs for your deployment to work](./images/getting-started/change-site-config-js.png)
+![You must change these two configs for your deployment to work]( ./_images/getting-started/change-site-config-js.png)
 
 <Callout emoji="🍀">
   There are other optional configs for customising your site, please refer to [Custom configs](./custom-configs) for
@@ -62,7 +62,7 @@ otherwise, **and only if you must !!!**
 
 - OneDrive 世纪互联 users have different API routes than what we usually use, you need to change `authApi` and `driveApi`:
 
-  ![Change authApi and driveApi only if you are a SharePoint user](./images/getting-started/change-api-config-js.png)
+  ![Change authApi and driveApi only if you are a SharePoint user]( ./_images/getting-started/change-api-config-js.png)
 
   Change them to:
 
@@ -79,7 +79,7 @@ otherwise, **and only if you must !!!**
 
 Import your **forked** onedrive-vercel-index GitHub project to Vercel. Vercel will automatically build the Next.js project, so please wait for deployment to finish.
 
-![Import the forked GitHub project into Vercel](./images/getting-started/import-to-vercel.png)
+![Import the forked GitHub project into Vercel]( ./_images/getting-started/import-to-vercel.png)
 
 The deployment is likely to fail as you have not added the environment variable `REDIS_URL` yet, which is what we are going to do now.
 
@@ -92,13 +92,13 @@ Create a Redis database, and set the URL of the Redis instance to environment va
 
 Whatever method you use, you should have a `REDIS_URL` present in your environment variable in Vercel.
 
-![Using Upstash as the free Redis database for onedrive-vercel-index](./images/getting-started/upstash-redis.png)
+![Using Upstash as the free Redis database for onedrive-vercel-index]( ./_images/getting-started/upstash-redis.png)
 
 ### Redeploy on Vercel
 
 Finally, trigger a redeployment on Vercel to use the new environment variable, navigate to the newly deployed page, and perform authorisation as guided by `onedrive-vercel-index`. The domains used by Vercel are listed in your project settings. You can also configure a custom domain here. (More on this in [Custom domain](todo).)
 
-![Checking the deployed domain and navigate to the live site](./images/getting-started/check-deployed-domain.png)
+![Checking the deployed domain and navigate to the live site]( ./_images/getting-started/check-deployed-domain.png)
 
 ## Authenticate your onedrive-vercel-index
 
@@ -106,7 +106,7 @@ Navigate to your newly deployed onedrive-vercel-index, usually [`https://xxx.ver
 
 ### Step 1 - Preparations
 
-![Step 1 - preparing for authentication](./images/getting-started/step1-preparations.png)
+![Step 1 - preparing for authentication]( ./_images/getting-started/step1-preparations.png)
 
 Check for anything incorrect about your defined configurations. Especially `client_id` and `client_secret` (obfuscated), which should be exactly the same as the main project if you are using the public tokens for authentication. Also check for API scopes, we only require:
 
@@ -118,7 +118,7 @@ If everything seems correct, proceed to step 2. If not, you need to modify `conf
 
 ### Step 2 - Get auth code
 
-![Step 2 - getting the authorisation code](./images/getting-started/step2-get-auth-code.png)
+![Step 2 - getting the authorisation code]( ./_images/getting-started/step2-get-auth-code.png)
 
 Based on `config/api.config.js` we have generated the OAuth link for you. Click on the link, a new tab will open and prompt you to login into your Microsoft account. Make sure you login with the same account you defined in `userPrincipalName` under `config/site.config.js`.
 
@@ -128,13 +128,13 @@ Based on `config/api.config.js` we have generated the OAuth link for you. Click 
   and secret](todo).
 </Callout>
 
-![The [localhost](http://localhost) URL that you would be redirected to](./images/getting-started/step2-redirect-code-localhost.png)
+![The [localhost](http://localhost) URL that you would be redirected to]( ./_images/getting-started/step2-redirect-code-localhost.png)
 
 You will be directed to `http://localhost`, copy the entire URL in your address bar to the input section below. onedrive-vercel-index will extract the `code` from the URL and use that to acquire a pair of `access_token` and `refresh_token`. Click on _Get tokens_ to proceed.
 
 ### Step 3 - Get access and refresh tokens
 
-![Success! We have acquired the tokens that are needed](./images/getting-started/step3-get-tokens.png)
+![Success! We have acquired the tokens that are needed]( ./_images/getting-started/step3-get-tokens.png)
 
 Success! We have acquired the tokens that are needed
 
