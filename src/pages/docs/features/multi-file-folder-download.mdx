@@ -1,1 +1,19 @@
+import Callout from 'nextra-theme-docs/callout'
+import Video from '../../../components/video'
+
 # Multi-file and folder download
+
+<Callout emoji="⚠️" type="warning">
+  This may be slow in reality. I would suggest using it for only downloading a batch of small files in large quantities,
+  instead of a couple of large files.
+</Callout>
+
+<Video src="/videos/multi-file-folder-download.mp4" ratio={1246 / 2246} />
+
+We use JSZip to download all files in-browser and compress them into file blobs, which are then downloaded to your device as a `zip` file.
+
+This is extremely useful if a series of small files are to be downloaded, but it could be time consuming if used for bulk-downloading a few large files.
+
+Folders are traversed and recursively fetched into the compressed zip. Multiple files or folders can be selected and downloaded side-by-side.
+
+<Callout emoji="🗣">Discussed in PR #177 and #169.</Callout>

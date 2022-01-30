@@ -1,1 +1,45 @@
+import Callout from 'nextra-theme-docs/callout'
+
 # Advanced
+
+<Callout emoji="♻️">Continuously updating here.</Callout>
+
+Some of the more advanced configurations here. You may or may not be looking for them.
+
+## Using your own `clientId` and `clientSecret`
+
+If you are not the admin of your OneDrive account, you may not be able to use the project's `clientId` and `clientSecret` provided by me. In this case, you would need to generate your own client id and secret for authentication.
+
+### Create your own pair of `clientId` and `clientSecret`
+
+Use [beetcb/ms-graph-cli](https://github.com/beetcb/ms-graph-cli) to create your own pair of `clientId` and `clientSecret`.
+
+### Modify configs in `api.config.js`
+
+You can directly replace `clientId` with your generated `clientId`.
+
+However, client secret is more involved. You need to obfuscate it with AES encryption, which can be done online with [https://www.dute.org/aes](https://www.dute.org/aes).
+
+- Original text is your client secret.
+- Encryption key is `onedrive-vercel-index`.
+- Encryption/Decryption method is CBC (Cipher Block Chaining, Default).
+- Finally press AES encryption to encrypt your client secret.
+
+You should get an obfuscated client secret which looks like:
+
+```
+U2FsdGVkX1830zo3/pFDqaBCVBb37iLw3WnBDWGF9GIB2f4apzv0roemp8Y+iIxI3Ih5ecyukqELQEGzZlYiWg==
+```
+
+Replace the `obfuscatedClientSecret` with this value.
+
+If you changed `redirectUri` to something other than `http://localhost`, you need to change that in `api.config.js` as well.
+
+<Callout emoji="🗣">
+  Discussed at: [关于使用自己的 secret 进行 AES
+  加密方式的小白解决办法](https://github.com/spencerwooo/onedrive-vercel-index/discussions/234).
+</Callout>
+
+## Setting up a custom domain
+
+Check out [Custom Domains - Vercel](https://vercel.com/docs/concepts/projects/custom-domains).
