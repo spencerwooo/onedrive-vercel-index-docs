@@ -2,9 +2,11 @@ import Logo from './components/logo'
 
 export default {
   github: 'https://github.com/spencerwooo/onedrive-vercel-index',
+  projectLink: 'https://github.com/spencerwooo/onedrive-vercel-index',
   docsRepositoryBase:
     'https://github.com/spencerwooo/onedrive-vercel-index-docs/tree/main/src/pages',
   titleSuffix: ' - OneDrive Vercel Index',
+  defaultMenuCollapsed: true,
   logo: <Logo />,
   head: (
     <>
@@ -27,7 +29,6 @@ export default {
   nextLinks: true,
   floatTOC: true,
   footer: true,
-  footerEditLink: ({ locale }) =>
-    locale === 'zh' ? '前往 GitHub 编辑此页' : 'Edit this page on GitHub',
+  footerEditLink: 'Edit this page on GitHub',
   footerText: <>Built with love {new Date().getFullYear()} © Spencer Woo</>
 }

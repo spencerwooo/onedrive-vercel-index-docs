@@ -1,3 +1,9 @@
 {
-  "getting-started": "Getting Started"
+  "getting-started": "Getting started",
+  "custom-configs": "Custom configs",
+  "advanced": "Advanced",
+  "features": "Features",
+  "showcase": "Showcase",
+  "migration": "Migration",
+  "faqs": "FAQs"
 }
