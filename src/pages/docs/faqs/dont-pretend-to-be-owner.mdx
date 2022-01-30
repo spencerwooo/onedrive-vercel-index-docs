@@ -1,1 +1,20 @@
+import Callout from 'nextra-theme-docs/callout'
+
 # Do not pretend to be the site owner?
+
+If you see this on the third step during initial setup ...
+
+![Do not pretend to be the site owner](../_images/faqs/dont-pretend-to-be-site-owner.png)
+
+It is because we need to verify if **you** are really **you** before saving the actual tokens into your database. If you see this, **then the email you defined in `site.config.js` under `userPrincipalName` is wrong.**
+
+You must configure this email to be **exactly the same** as the one you use to log into your Microsoft account during the second step of OAuth. Check for typos, domain names, and incorrect capitalisations. **Must be exactly the same!** 😡
+
+<Callout emoji="💬">
+Related discussions:
+
+- [Verify identity against site.json defined user during OAuth #241](https://github.com/spencerwooo/onedrive-vercel-index/discussions/241)
+- [Do not pretend to be the site owner #250](https://github.com/spencerwooo/onedrive-vercel-index/discussions/250)
+- [Google Drive Add #272 - what problem](https://github.com/spencerwooo/onedrive-vercel-index/discussions/272)
+
+</Callout>
