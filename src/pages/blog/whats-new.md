@@ -6,7 +6,7 @@
 
 - ⚡️ We have migrated from `npm` to `pnpm` as project's package manager for faster build speed and more efficient cache usage. You may need to update your Vercel's build commands:
 
-  ![](https://user-images.githubusercontent.com/32114380/152125559-487e42ac-2625-49cc-af92-280aff5d3e11.png)
+  ![Migrate from npm to pnpm](./_images/pnpm-commands.png)
 
   - Build command: `pnpm build`
   - Install command: `pnpm install`
