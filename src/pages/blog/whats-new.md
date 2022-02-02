@@ -2,6 +2,16 @@
 
 🎉 This is a constantly updating page of new updates for this project. Also available at [What's new? #325](https://github.com/spencerwooo/onedrive-vercel-index/discussions/325).
 
+#### 2022/2/2
+
+- ⚡️ We have migrated from `npm` to `pnpm` as project's package manager for faster build speed and more efficient cache usage. You may need to update your Vercel's build commands:
+
+  ![](https://user-images.githubusercontent.com/32114380/152125559-487e42ac-2625-49cc-af92-280aff5d3e11.png)
+
+  - Build command: `pnpm build`
+  - Install command: `pnpm install`
+- ...
+
 #### 2022/1/29
 
 - ❗**Breaking** - Config files changed from `.json` to `.config.js`, relevant comments added. You can now move `userPrincipleName` to Vercel's environment variables (to avoid exposing your email address publicly).
