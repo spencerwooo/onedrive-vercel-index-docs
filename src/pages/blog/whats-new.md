@@ -4,13 +4,25 @@
 
 #### 2022/2/2
 
+- 🎥 We have dropped usage of `react-player` and is now using `react-dplayer` and `react-audio-player` as video and audio players respectively.
+- 🎇 We added thumbnail rendering for videos, see the difference:
+
+  |                                  Before                                  |                                After                                |
+  | :----------------------------------------------------------------------: | :-----------------------------------------------------------------: |
+  | ![Old version doesn't render thumbnails](./_images/old-no-thumbnail.png) | ![New version renders thumbnails](./_images/new-with-thumbnail.png) |
+
+- 💬 We added support for subtitles (closed captions), which are auto referenced if a valid subtitle file with the same name as the video and in `.vtt` webvtt format is present.
+
+  |                                 Before                                  |                                    After                                     |
+  | :---------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+  | ![Old version doesn't respect subtitles](./_images/old-no-subtitle.png) | ![New version tries to reference subtitles](./_images/new-with-subtitle.png) |
+
 - ⚡️ We have migrated from `npm` to `pnpm` as project's package manager for faster build speed and more efficient cache usage. You may need to update your Vercel's build commands:
 
   ![Migrate from npm to pnpm](./_images/pnpm-commands.png)
 
   - Build command: `pnpm build`
   - Install command: `pnpm install`
-- ...
 
 #### 2022/1/29
 

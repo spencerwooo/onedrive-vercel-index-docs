@@ -6,7 +6,6 @@ export default {
   docsRepositoryBase:
     'https://github.com/spencerwooo/onedrive-vercel-index-docs/tree/main/src/pages',
   titleSuffix: ' - OneDrive Vercel Index',
-  defaultMenuCollapsed: true,
   logo: <Logo />,
   head: (
     <>
