@@ -1,6 +1,6 @@
 import styles from "./features.module.css"
 
-export default () => {
+export default function Features() {
   return (
     <div className={styles.features}>
       <div className={styles.feature}>Completely free to host 💸</div>

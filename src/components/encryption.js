@@ -11,7 +11,7 @@ const obfuscateToken = token => {
   return encrypted.toString()
 }
 
-export default () => {
+export default function Encryption() {
   // An example client secret: `5e07Q~ZCBgtR3MdPUpQcqa~N8pOZo11GJ1MhL`
   const [token, setToken] = useState('')
   const obfuscatedToken = token && obfuscateToken(token)
