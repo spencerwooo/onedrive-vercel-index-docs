@@ -1,4 +1,4 @@
-import styles from "./features.module.css";
+import styles from "./features.module.css"
 
 export default () => {
   return (

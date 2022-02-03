@@ -1,0 +1,29 @@
+.title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.label {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: rgb(107 114 128);
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  line-height: 1.25;
+  appearance: none;
+  display: block;
+}
+
+.container {
+  background-color: rgb(107, 114, 128, 0.1);
+  margin-top: 1.5rem;
+  padding: 1.25rem 1rem;
+  border-radius: 0.5rem;
+}
