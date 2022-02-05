@@ -2,6 +2,14 @@
 
 🎉 This is a constantly updating page of new updates for this project. Also available at [What's new? #325](https://github.com/spencerwooo/onedrive-vercel-index/discussions/325).
 
+#### 2022/2/5
+
+- 💠  Layout switching is now supported! Grid layouts with thumbnail previews are now available.
+
+  ![Grid layout](./_images/grid-layout-images.png)
+
+- 🗑 We have dropped usage of `react-viewer` which is unperformant and causes high CPU usages.
+
 #### 2022/2/2
 
 - 🎥 We have dropped usage of `react-player` and is now using `react-dplayer` and `react-audio-player` as video and audio players respectively.
