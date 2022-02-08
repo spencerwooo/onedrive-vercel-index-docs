@@ -102,3 +102,13 @@ import Video from '../../components/video'
 <Video src="/videos/links-copilot-demo-video.mp4" ratio={810 / 1556} />
 
 请到 [Brand Icons | Font Awesome](https://fontawesome.com/icons?s=brands) 查看图标列表。
+
+### `datetimeFormat`
+
+`datetimeFormat` - 是由 [`day.js`](https://day.js.org/) 定义的日期格式。详情请参考 [`day.js` Docs](https://day.js.org/docs/en/display/format) 。
+
+默认格式为不带时区的完整 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 格式，并且用空格代替字母 `T` ，就像 `2006-01-02 15:04:05` 。如果您懒得查阅文档，想要自己构建的话，这里有一些 `day.js` 格式：
+
+- `new Date().toLocaleString('en-US')`： `M/D/YYYY, h:mm:ss A` ，效果是 `1/2/2006, 3:04:05 PM` 。
+- `new Date().toLocaleString('en-GB')`： `DD/MM/YYYY, HH:mm:ss` ，效果是 `02/01/2006, 15:04:05` 。
+- `new Date().toLocaleString('zh-cn')` 将 上/下午 替换为 A/PM： `YYYY/M/D A h:mm:ss` ，效果是 `2006/1/2 PM 3:04:05` 。
