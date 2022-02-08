@@ -104,3 +104,13 @@ However, I suggest adding some form of contact for your website.
 <Video src="/videos/links-copilot-demo-video.mp4" ratio={810 / 1556} />
 
 For a full list of supported brand icons, visit: [Brand Icons | Font Awesome](https://fontawesome.com/icons?s=brands).
+
+### `datetimeFormat`
+
+`datetimeFormat` - is a [`day.js`](https://day.js.org/)-style datetime format string to format datetimes in the app. Detailed specification can be found in [`day.js` Docs](https://day.js.org/docs/en/display/format).
+
+The default value is [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) full datetime without timezone and replacing character `T` with space, which looks like `2006-01-02 15:04:05`. Here are some other provided `day.js` format strings if you do not want to refer to its documentation and build them on your own:
+
+- `new Date().toLocaleString('en-US')`: `M/D/YYYY, h:mm:ss A`, which looks like `1/2/2006, 3:04:05 PM`.
+- `new Date().toLocaleString('en-GB')`: `DD/MM/YYYY, HH:mm:ss`, which looks like `2/1/2006, 15:04:05`.
+- `new Date().toLocaleString('zh-cn')` replacing 上/下午 with A/PM: `YYYY/M/D A h:mm:ss`, which looks like `2006/1/2 PM 3:04:05`.
