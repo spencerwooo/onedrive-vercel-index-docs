@@ -1,0 +1,19 @@
+{
+  "index": {
+    "title": "onedrive-vercel-index",
+    "type": "nav",
+    "hidden": true
+  },
+  "docs": {
+    "title": "文档",
+    "type": "nav"
+  },
+  "blog": {
+    "title": "Blog",
+    "type": "nav"
+  },
+  "sponsor": {
+    "title": "赞助者",
+    "type": "nav"
+  }
+}

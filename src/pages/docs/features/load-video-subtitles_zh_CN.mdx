@@ -1,0 +1,30 @@
+import Callout from 'nextra-theme-docs/callout'
+
+# 添加视频字幕
+
+<Callout emoji="‼️" type="warning">仅支持 WebVTT 字幕文件（即 `.vtt` 后缀）</Callout>
+
+如果您有某个视频的 [WebVTT](https://www.w3.org/TR/webvtt1/) 字幕文件（即 `.vtt` 后缀），您可以将它放在与视频文件的同一个目录下。
+
+![Video with subtitles](../_images/features/video-subtitles.png)
+
+例如：
+
+- 拥有视频和字幕的文件夹： [🍡 Genshin PV / PV - Shenhe - 申鹤](https://drive.spencerwoo.com/%F0%9F%8D%A1%20Genshin%20PV/PV%20-%20Shenhe%20-%20%E7%94%B3%E9%B9%A4)
+- 拥有字幕的视频： [Collected Miscellany - Shenhe - Fluttering of Frosty Feathers - Genshin Impact.mp4](https://drive.spencerwoo.com/%F0%9F%8D%A1%20Genshin%20PV/PV%20-%20Shenhe%20-%20%E7%94%B3%E9%B9%A4/Collected%20Miscellany%20-%20Shenhe%20-%20Fluttering%20of%20Frosty%20Feathers%20-%20Genshin%20Impact.mp4).
+
+简单来说，您的视频和字幕要放在同一个文件夹下，文件名也要一样：
+
+```
+.
+├── <视频文件名>.mp4
+└── <视频文件名>.vtt
+```
+
+例如：
+
+```
+.
+├── Collected Miscellany - Shenhe - Fluttering of Frosty Feathers - Genshin Impact.mp4
+└── Collected Miscellany - Shenhe - Fluttering of Frosty Feathers - Genshin Impact.vtt
+```

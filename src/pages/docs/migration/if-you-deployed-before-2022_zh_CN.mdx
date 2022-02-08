@@ -1,0 +1,18 @@
+# 迁移到 2022 年的新版本
+
+在 2022 年，此项目有了一个重大更新，您不再需要使用您自己的 `client_id` 、 `client_secret` 等等信息。详情请参考 [这个公告](https://github.com/spencerwooo/onedrive-vercel-index/discussions/215)
+
+您可以从头开始部署，详情请参考 [立即上手](../docs/getting-started_zh_CN)，或者通过新的 OAuth 步骤迁移到新版本。
+
+## 从旧版本迁移
+
+- 您需要创建一个 Redis 数据库，并且将它的访问链接填写在 Vercel 的 `REDIS_URL` 环境变量里。我们推荐使用 [Upstash](https://vercel.com/integrations/upstash) 。
+- 您需要还原您在 `config/api.config.js` 里的一些更改。尤其是 `clientId` 与 `obfuscatedClientSecret` 要和下面相同：
+
+  ```js
+  clientId: "d87bcc39-1750-4ca0-ad54-f8d0efbb2735",
+  obfuscatedClientSecret: "U2FsdGVkX1830zo3/pFDqaBCVBb37iLw3WnBDWGF9GIB2f4apzv0roemp8Y+iIxI3Ih5ecyukqELQEGzZlYiWg=="
+  ```
+
+- 您还需要填写 `config/site.config.js` 里的 `userPrincipalName` **通常是您的微软账户** 以进行 OAuth 步骤。
+- 您可以删除 Vercel 里的旧环境变量了，例如 `CLIENT_SECRET` 、 `ACCESS_TOKEN` 以及 `REFRESH_TOKEN` 。

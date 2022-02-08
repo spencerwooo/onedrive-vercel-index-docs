@@ -1,0 +1,104 @@
+import Callout from 'nextra-theme-docs/callout'
+import Bleed from 'nextra-theme-docs/bleed'
+import Video from '../../components/video'
+
+# 自定义配置
+
+有两个配置文件，分别是： `config/api.config.js` 与 `config/site.config.js` 。
+
+- `config/api.config.js` - 是用来定义 API 参数的。 **OneDrive 国际版用户无需更改任何参数**
+- `config/site.config.js` - 是用来自定义您的网页的，您可以自定义标题、图标、字体、联系方式等等。
+
+## 自定义 API 参数
+
+**您自己觉得有必要修改时再修改**
+
+- 如果您的账户没有管理权限，那么您需要使用自己的 `clientId` 与 `obfuscatedClientSecret` 。详情请参考 [使用您自己的 clientid 与 secret](./advanced_zh_CN) 。
+- 如果您是 OneDrive 世纪互联 用户，您需要修改 `authApi` 与 `driveApi` ，您应该已经在 [立即上手](./getting-started_zh_CN) 做过了。
+
+{/* 如果您需要使用代理下载功能，请修改 `directLinkRegex` 。详情请参考 [Proxied download (disabled)](todo). */}
+
+## 自定义网页
+
+有些设置是为您自定义自己的网页而准备的，它们在 `config/site.config.js` 里：
+
+### `userPrincipalName`
+
+您应该已经在 [立即上手](./getting-started_zh_CN) 做过了。
+
+### `icon` - 图标和 favicons
+
+![Customising your site's icons and favicons]( ./_images/custom-configs/customising-icons.png)
+
+`icon` - 是标题栏中标题左边的图标。 **它应该被放置在您的 GitHub 项目的 [`/public`](https://github.com/spencerwooo/onedrive-vercel-index/tree/main/public) 目录，而不是您的 Onedrive 目录** ，并且填上它在 `/public` 目录内的路径。
+
+比如说，您的项目的 `/public` 路径长这样：
+
+```
+.
+├── favicon-16x16.png
+├── favicon-32x32.png
+├── favicon.ico
+├── icons
+│   └── 64.png
+└── ...
+```
+
+然后您想让 `64.png` 作为您的网页图标，那么您应该将 `site.config.js` 里的 `icon` 设置为 `/icons/64.png` 。您的网页的 favicons 也应该放置在 `/public` 目录，请访问 [favicon.io](http://favicon.io) 以生成您的 favicons 。
+
+### `title` - 网页标题
+
+标题栏上的网页标题，图标右边那个。
+
+### `baseDirectory`
+
+您想用 onedrive-vercel-index 分享的 OneDrive 目录，您应该已经在 [立即上手](./getting-started_zh_CN) 做过了。
+
+### `maxItems`
+
+每页展示的文件数，最大为微软 API 限制的 200 。
+
+<Callout emoji="➡️">
+  来看看分页功能 [https://drive.spencerwoo.com/🥟 Some test files/Imagenette](https://drive.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/Imagenette).
+</Callout>
+
+### `googleFont` - 自定义字体家族
+
+我们使用谷歌字体家族作为界面的默认字体：
+
+- `googleFontSans` - onedrive-vercel-index 使用的 sans serif 字体。
+- `googleFontMono` - onedrive-vercel-index 使用的 monospace 字体。
+- `googleFontLinks` - 谷歌字体资源的链接。
+
+您可以在 [fonts.google.com](https://fonts.google.com/) 生成您想用的字体家族的名字和链接。
+
+### `footer`
+
+网页的页脚。您可以在这里写 HTML ，但您要注意双引号 - 您需要将 `"` 替换为 `\"` 。您可以在这里写任何东西。如果您喜欢徽章，可以在 [shields.io](http://shields.io) 生成一些。😃
+
+### `protectedRoutes`
+
+您可以创建一个需要密码才能访问的文件夹，详情请参考 [私密文件夹](./features/protected-folders_zh_CN) 。
+
+### `email`
+
+`email` - 这是可选项，如果您不想展示任何邮箱，您可以删到只剩 `""`：
+
+```diff
+- "email": "mailto:spencer.wushangbo@gmail.com",
++ "email": "",
+```
+
+我还是建议您放上一些联系方式的。
+
+### `links`
+
+`links` - 您可以添加您想要展示的链接，格式为 `{ "name": "xxx", "link": "xxx" }` 。我们已经支持所有来自 Font Awesome 的图标，只要您有 `name` 。请查看下面的演示：
+
+<Callout emoji="💦">
+  演示中出现的所有链接均由 GitHub Copilot 生成，不包含任何个人信息。
+</Callout>
+
+<Video src="/videos/links-copilot-demo-video.mp4" ratio={810 / 1556} />
+
+请到 [Brand Icons | Font Awesome](https://fontawesome.com/icons?s=brands) 查看图标列表。
