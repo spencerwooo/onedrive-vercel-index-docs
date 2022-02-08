@@ -2,6 +2,19 @@
 
 🎉 This is a constantly updating page of new updates for this project. Also available at [What's new? #325](https://github.com/spencerwooo/onedrive-vercel-index/discussions/325).
 
+#### 2022/2/8
+
+- 🇨🇳/🇬🇧 - Project is i18n-ed, enjoy. 🥱
+- 🎥 `.flv` videos are now supported.
+- 🔗 Links copied to your clipboards are now formatted in a human-readable way.
+
+  ```diff
+  - before: /api?path=/%F0%9F%8E%BB%20Genshin%20playlist/%E3%80%90%E5%8E%9F%E7%A5%9E%E3%80%91%E8%83%A1%E6%A1%83%EF%BC%9A%E5%95%8A%E5%AF%B9%E5%AF%B9%E5%AF%B9%E5%AF%B9.mp4&raw=true
+  + after:  /api?path=/🎻%20Genshin%20playlist/【原神】胡桃：啊对对对对.mp4&raw=true
+  ```
+
+- 📅 You can now customise your date formats in `site.config.js` under `datetimeFormat`.
+
 #### 2022/2/5
 
 - 💠  Layout switching is now supported! Grid layouts with thumbnail previews are now available.
