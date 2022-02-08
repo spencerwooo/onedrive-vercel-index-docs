@@ -24,7 +24,7 @@ import Callout from 'nextra-theme-docs/callout'
 onedrive-vercel-index 是由 Next.js 构建的模板，您可以将其免费部署在 Vercel 、 Netlify 或者其他托管平台上。下面我们将 **完全从头开始** 创建您自己的 onedrive-vercel-index 。
 
 <Callout emoji="⚠️" type="warning">
-  如果您在 2022 年之前部署过此项目，请参考 [迁移到 2022 年的新版本](./migration/if-you-deployed-before-2022_zh_CN) 。
+  如果您在 2022 年之前部署过此项目，请参考 [迁移到 2022 年的新版本](./migration/if-you-deployed-before-2022.zh) 。
 </Callout>
 
 ## Fork 此项目
@@ -47,7 +47,7 @@ onedrive-vercel-index 是由 Next.js 构建的模板，您可以将其免费部�
 ![You must change these two configs for your deployment to work](./_images/getting-started/change-site-config-js.png)
 
 <Callout emoji="🍀">
-  有些设置是为您自定义自己的网页而准备的，详情请参考 [自定义配置](./custom-configs_zh_CN) 。
+  有些设置是为您自定义自己的网页而准备的，详情请参考 [自定义配置](./custom-configs.zh) 。
 </Callout>
 
 ### 修改 API 参数（可选项）
@@ -69,7 +69,7 @@ onedrive-vercel-index 是由 Next.js 构建的模板，您可以将其免费部�
 
   {/* 如果您需要使用代理下载功能，请修改 `directLinkRegex` 。详情请参考 [Proxied download (disabled)](). */}
 
-- OneDrive 企业版、教育版以及 E5 订阅的用户需要注意：先尝试在不修改 `config/api.config.js` 的情况下进行 OAuth **无论您是否有管理权限** 。 如果您被告知需要管理权限，您就要使用您自己的 `clientId` 与 `clientSecret` 了。详情请参考 [使用您自己的 clientid 与 secret](./advanced_zh_CN).
+- OneDrive 企业版、教育版以及 E5 订阅的用户需要注意：先尝试在不修改 `config/api.config.js` 的情况下进行 OAuth **无论您是否有管理权限** 。 如果您被告知需要管理权限，您就要使用您自己的 `clientId` 与 `clientSecret` 了。详情请参考 [使用您自己的 clientid 与 secret](./advanced.zh) 。
 
 ## 导入到 Vercel 并部署
 
@@ -107,7 +107,7 @@ rediss://:xxx...@some-thing-like-35533.upstash.io:35533
 
 ### 重新部署
 
-最后，重新进行一次部署。并在部署完成后访问 Vercel 提供的链接，`onedrive-vercel-index` 将会引导您进行 OAuth 认证。您也可以在 Vercel 自定义访问链接，详情请参考 [自定义域名](./advanced_zh_CN) 。
+最后，重新进行一次部署。并在部署完成后访问 Vercel 提供的链接，`onedrive-vercel-index` 将会引导您进行 OAuth 认证。您也可以在 Vercel 自定义访问链接，详情请参考 [自定义域名](./advanced.zh) 。
 
 ![Checking the deployed domain and navigate to the live site](./_images/getting-started/check-deployed-domain.png)
 
@@ -134,7 +134,7 @@ rediss://:xxx...@some-thing-like-35533.upstash.io:35533
 我们已经基于 `config/api.config.js` 给您准备好认证链接了。点击链接，您将会进入一个新标签页并进行登录。请确保您登陆的账户与您在 `config/site.config.js` 的 `userPrincipalName` 里设置的一致。
 
 <Callout emoji="⚠️" type="warning">
-  如果您的帐户没有管理权限，那么您需要使用您自己的 `client_id` 与 `client_secret` 。详情请参考 [使用您自己的 clientid 与 secret](./advanced_zh_CN) 。
+  如果您的帐户没有管理权限，那么您需要使用您自己的 `client_id` 与 `client_secret` 。详情请参考 [使用您自己的 clientid 与 secret](./advanced.zh) 。
 </Callout>
 
 ![The [localhost](http://localhost) URL that you would be redirected to](./_images/getting-started/step2-redirect-code-localhost.png)
