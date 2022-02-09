@@ -6,10 +6,10 @@ import Callout from 'nextra-theme-docs/callout'
 
 <Callout emoji="⚡️">这是一个简短的构建你自己的 onedrive-vercel-index 的指导。</Callout>
 
-1. Fork [此项目](https://github.com/spencerwooo/onedrive-vercel-index) 。
+1. Fork [此项目](https://github.com/spencerwooo/onedrive-vercel-index)。
 2. 将 `site.config.js` 里的 `userPrincipleName` 改为你的微软账户邮箱。
 3. 将 `site.config.js` 里的 `baseDirectory` 修改为你要分享的文件夹路径。
-4. 根据自身情况修改 `api.config.js` 。
+4. 根据你的 OneDrive 版本示情况修改 `api.config.js`。
 5. 将你的项目导入到 Vercel 并 [添加 Upstash 插件](https://vercel.com/integrations/upstash) 以更方便地设置 `REDIS_URL` 环境变量。
 6. 部署，并享受！ 🎉
 
@@ -17,11 +17,11 @@ import Callout from 'nextra-theme-docs/callout'
 
 ## 立即上手（要来真的了！）
 
-使用 onedrive-vercel-index 来共享、预览你的 OneDrive 里的文件、视频、音频、文档，并提供下载！
+使用 onedrive-vercel-index 来共享、预览你的 OneDrive 里的文件、视频、音频、文档，并提供下载。
 
 ![Screenshots of onedrive-vercel-index on multiple platforms](./_images/getting-started/od-vercel-idx.png)
 
-onedrive-vercel-index 是由 Next.js 构建的模板，你可以将其免费部署在 Vercel、Netlify 或者其他托管平台上。下面我们将 **完全从头开始** 创建你自己的 onedrive-vercel-index。
+onedrive-vercel-index 本质上就是由 Next.js 构建的模板，你可以将其免费部署在 Vercel、Netlify 或者其他托管平台上。下面我们将 **完全从头开始** 创建你自己的 onedrive-vercel-index。
 
 <Callout emoji="⚠️" type="warning">
   如果你在 2022 年之前部署过此项目，请参考 [迁移到 2022 年的新版本](./migration/if-you-deployed-before-2022.zh) 。
@@ -29,20 +29,20 @@ onedrive-vercel-index 是由 Next.js 构建的模板，你可以将其免费部�
 
 ## Fork 此项目
 
-将此项目 Fork 到你自己的 GitHub 账户中
+将此项目 Fork 到你自己的 GitHub 账户中，因为你会需要维护一个包含你自己配置的项目。
 
 ![Fork the repo to your own GitHub account](./_images/getting-started/fork-repo.png)
 
 ## 修改设置
 
-有些设置是需要修改的。有两个配置文件，分别是 `config/site.config.js` 与 `config/api.config.js` 。前面那个是用来定制你的网页的，后米娜那个是用来定义 API 参数的。
+有些设置是需要修改的。项目包括两个配置文件，分别是 `config/site.config.js` 与 `config/api.config.js`。前者是用来定制你的网页的，后者那个是用来定义 API 参数的。
 
 ### 客制化网站
 
 请根据自身情况修改 [`config/site.config.js`](https://github.com/spencerwooo/onedrive-vercel-index/blob/main/config/site.config.js)：
 
 - `userPrincipalName` - 是用来在 OAuth 步骤时认证你的个人信息的。通常是你的 **微软账户邮箱** 。
-- `baseDirectory` - 是你要分享的 OneDrive 目录。你必须保证此目录有效且与此参数一致。（你也可以直接在 OneDrive 内创建一个 `Public` 文件夹，这样就无需修改此处的参数。）
+- `baseDirectory` - 是你要分享的 OneDrive 目录。你必须保证此目录有效且与此参数一致。（你可以直接在 OneDrive 内创建一个叫做 `Public` 文件夹，并将此项设置为 `/Public`。）
 
 ![You must change these two configs for your deployment to work](./_images/getting-started/change-site-config-js.png)
 
@@ -50,11 +50,13 @@ onedrive-vercel-index 是由 Next.js 构建的模板，你可以将其免费部�
 
 ### 修改 API 参数（可选项）
 
-- 如果你是一位 **OneDrive 国际版用户**（不是 OneDrive 企业版或教育版，不是 SharePoint 用户，不是 E5 订阅用户），请直接忽略此步骤，不要碰 `config/api.config.js`。
+如果……
 
-如果不是，**或者你自己觉得有必要修改**
+- 你是 **OneDrive 国际版用户**（不是 OneDrive 企业版或教育版，不是 SharePoint 用户，不是 E5 订阅用户），请直接忽略此步骤，不要碰 `config/api.config.js`。
 
-- OneDrive 世纪互联 使用了不同的 API 参数，所以我们要修改 `authApi` 和 `driveApi`
+如果不是，**或者你自己觉得真的有必要修改**：
+
+- OneDrive 世纪互联使用了不同的 API 参数，所以我们要修改 `authApi` 和 `driveApi`
 
   ![Change authApi and driveApi only if you are a SharePoint user](./_images/getting-started/change-api-config-js.png)
 
@@ -62,12 +64,12 @@ onedrive-vercel-index 是由 Next.js 构建的模板，你可以将其免费部�
 
   ```js
   authApi: "https://login.partner.microsoftonline.cn/common/oauth2/v2.0/token",
-  driveApi: "https://microsoftgraph.chinacloudapi.cn/v1.0/me/drive"
+  driveApi: "https://microsoftgraph.chinacloudapi.cn/v1.0/me/drive",
   ```
 
   {/* 如果你需要使用代理下载功能，请修改 `directLinkRegex` 。详情请参考 [Proxied download (disabled)](). */}
 
-- OneDrive 企业版、教育版以及 E5 订阅的用户需要注意：先尝试在不修改 `config/api.config.js` 的情况下进行 OAuth **无论你是否有管理权限** 。 如果你被告知需要管理权限，你就要使用你自己的 `clientId` 与 `clientSecret` 了。详情请参考 [使用你自己的 clientid 与 secret](./advanced.zh) 。
+- OneDrive 企业版、教育版以及 E5 订阅的用户需要注意：先尝试在不修改 `config/api.config.js` 的情况下进行 OAuth **无论你是否有管理权限** 。如果你被告知需要管理权限，你就要使用你自己的 `clientId` 与 `clientSecret` 了。详情请参考 [使用你自己的 clientid 与 secret](./advanced.zh) 。
 
 ## 导入到 Vercel 并部署
 
@@ -76,7 +78,7 @@ onedrive-vercel-index 是由 Next.js 构建的模板，你可以将其免费部�
 - 修改 Build command 为 `pnpm build`.
 - 修改 Install command 为 `pnpm install`.
 
-<Callout>默认的也许能正常工作，但最好还是自定义</Callout>
+<Callout>默认的也许能正常工作，但最好还是自定义这一项目。</Callout>
 
 ![Import the forked GitHub project into Vercel](./_images/getting-started/import-to-vercel.png)
 
@@ -89,7 +91,7 @@ onedrive-vercel-index 是由 Next.js 构建的模板，你可以将其免费部�
 - 我们推荐使用 **Upstash** ，它完全免费，并且与 Vercel 深度合作，详情请参考 [Vercel Integration](https://docs.upstash.com/redis/howto/vercelintegration) 。（请忽略最后一步时让你 _Create Your Redis Client_ ，onedrive-vercel-index 已经为你处理好了）。
 - 你可以使用你自己的 Redis 数据库，只要有 Vercel 能用的访问链接就行。
 
-无论你用什么方式，你应该在 Vercel 的 `REDIS_URL` 环境变量里填好一个长得像这样的 Redis URL：
+无论你用什么方式，你应该在 Vercel 的 `REDIS_URL` 环境变量里填好一个类似这样的 Redis URL：
 
 ```
 redis://:xxx...@some-thing-like-35533.upstash.io:35533
@@ -121,7 +123,7 @@ rediss://:xxx...@some-thing-like-35533.upstash.io:35533
 
 - `user.read`: 在进行 OAuth 时认证你的身份，防止某些傻逼通过重新认证雷普你的项目。
 - `files.read.all`: 用于访问你的 OneDrive 的文件
-- `offline_access`: 这个……用来离线访问 🙃
+- `offline_access`: 就是……用来离线访问 🙃
 
 如果一切都准备好了，就来到第二步。如果有些什么差错，检查你的 `config/api.config.js` 然后重新部署。
 
@@ -132,7 +134,7 @@ rediss://:xxx...@some-thing-like-35533.upstash.io:35533
 我们已经基于 `config/api.config.js` 给你准备好认证链接了。点击链接，你将会进入一个新标签页并进行登录。请确保你登陆的账户与你在 `config/site.config.js` 的 `userPrincipalName` 里设置的一致。
 
 <Callout emoji="⚠️" type="warning">
-  如果你的帐户没有管理权限，那么你需要使用你自己的 `client_id` 与 `client_secret` 。详情请参考 [使用你自己的 clientid 与
+  如果你的帐户没有管理权限，那么你需要使用你自己的 `client_id` 与 `client_secret`。详情请参考 [使用你自己的 clientid 与
   secret](./advanced.zh) 。
 </Callout>
 
@@ -151,8 +153,8 @@ rediss://:xxx...@some-thing-like-35533.upstash.io:35533
   `config/site.config.js` 里的 `userPrincipalName`是否填写正确。
 </Callout>
 
-最后，你将会跳转到你全新的 onedrive-vercel-index ，好好享受吧！
+最后，你将会跳转到你全新的 onedrive-vercel-index ，完成！
 
 <Callout emoji="⚠️" type="warning">
-  如果你跳转到步骤一，而你确认一切都没有问题时，**请等待几秒并手动回到主页** ，Redis 数据库存取凭证需要一点儿时间。
+  如果你认证结束后被重新跳转到步骤一，而你确认一切都没有问题时，**请等待几秒并手动回到主页再刷新**，Redis 数据库存取凭证需要一点儿时间。
 </Callout>

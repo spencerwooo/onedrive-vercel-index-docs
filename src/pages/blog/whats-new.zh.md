@@ -17,16 +17,16 @@
 
 #### 2022/2/5
 
-- 💠 正式支持布局切换！新增带缩略图预览的网格布局！
+- 💠 正式支持布局切换，新增带缩略图预览的网格布局。
 
   ![Grid layout](./_images/grid-layout-images.png)
 
-- 🗑 我们不再使用高性能消耗又难用的 `react-viewer` 。
+- 🗑 我们不再使用高性能消耗较高的 `react-viewer`。
 
 #### 2022/2/2
 
 - 🎥 我们删除了 `react-player` 而使用可靠的 `react-dplayer` 与 `react-audio-player` 来播放视频与音频。
-- 🎇 我们现在还能为视频渲染缩略图：
+- 🎇 我们现在还能为视频显示缩略图：
 
   |                                  Before                                  |                                After                                |
   | :----------------------------------------------------------------------: | :-----------------------------------------------------------------: |
@@ -47,7 +47,7 @@
 
 #### 2022/1/29
 
-- ❗**重要** - 配置文件已从 `.json` 切换到 `.config.js` ，并添加了注释。同时为了隐私着想，现在你还可以将 `userPrincipleName` 移动到 Vercel 的环境变量里。
+- ❗**重要** - 配置文件已从 `.json` 更换为 `.config.js` ，并添加了注释。同时为了隐私着想，现在你还可以将 `userPrincipleName` 在 Vercel 的环境变量里定义。
 - CORS 头现在出现在 OneDrive 的 `?raw=true` 文件直链路由中。
 
 #### 2022/1/22
@@ -60,7 +60,7 @@
 
 #### 2022/1/10
 
-- 🚫 因遵循 Vercel 的服务条款，代理下载已被移除。 [Proxied download not working - 无法使用代理下载 #251](https://github.com/spencerwooo/onedrive-vercel-index/discussions/251)
+- 🚫 为遵循 Vercel 服务条款，代理下载已被移除。 [Proxied download not working - 无法使用代理下载 #251](https://github.com/spencerwooo/onedrive-vercel-index/discussions/251)
 
 #### 2022/1/1
 

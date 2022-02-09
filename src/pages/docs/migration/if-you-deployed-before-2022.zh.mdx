@@ -6,7 +6,7 @@
 
 ## 从旧版本迁移
 
-- 你需要创建一个 Redis 数据库，并且将它的访问链接填写在 Vercel 的 `REDIS_URL` 环境变量里。我们推荐使用 [Upstash](https://vercel.com/integrations/upstash) 。
+- 你需要创建一个 Redis 数据库，并且将它的访问链接填写在 Vercel 的 `REDIS_URL` 环境变量里。我们推荐使用 [Upstash](https://vercel.com/integrations/upstash)。
 - 你需要还原你在 `config/api.config.js` 里的一些更改。尤其是 `clientId` 与 `obfuscatedClientSecret` 要和下面相同：
 
   ```js
@@ -15,4 +15,4 @@
   ```
 
 - 你还需要填写 `config/site.config.js` 里的 `userPrincipalName` **通常是你的微软账户** 以进行 OAuth 步骤。
-- 你可以删除 Vercel 里的旧环境变量了，例如 `CLIENT_SECRET` 、 `ACCESS_TOKEN` 以及 `REFRESH_TOKEN` 。
+- 你可以删除 Vercel 里的旧环境变量了，例如 `CLIENT_SECRET` 、 `ACCESS_TOKEN` 以及 `REFRESH_TOKEN`。

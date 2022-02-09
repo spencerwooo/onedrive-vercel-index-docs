@@ -3,13 +3,13 @@ import Encryption from '../../components/encryption'
 
 # 高级
 
-<Callout emoji="♻️">此页持续更新中</Callout>
+<Callout emoji="♻️">此页持续更新中。</Callout>
 
 这里有些高级设置，你可能需要了解一下。
 
-## 使用你自己的 clientid 与 secret
+## 使用你自己的 client id 与 secret
 
-如果你的账户没有管理权限，那么你就无法使用公共的 `clientId` 与 `clientSecret` 。这个情况下，你就要生成你自己的 client id 与 secret 了。
+如果你的账户没有管理权限，那么你就无法使用项目提供的 `clientId` 与 `clientSecret` 。这个情况下，你就要生成你自己的 client id 与 secret 了。
 
 ### 注册一个应用程序
 
@@ -30,23 +30,23 @@ import Encryption from '../../components/encryption'
 
    OneDrive 世纪互联用户设置为 - 任何组织目录（任何 Azure AD 目录 - 多租户）中的帐户。
 
-4. 将 _Redirect URI (optional)_ 设置为 `Web`（在下拉菜单里）以及 `http://localhost` 。
+4. 将 _Redirect URI (optional)_ 设置为 `Web`（在下拉菜单里）以及 `http://localhost`。
 5. 点击注册。
 
 ![Register a new application](./_images/advanced/register-an-application.png)
 
 ### 获取你的 client id 与 secret
 
-你的应用 (client) ID 就是 `api.config.js` 里的 `clientId` ，它应该出现在 _Overview_ > _Essentials_ 。
+你的应用 (client) ID 就是 `api.config.js` 里的 `clientId` ，它应该出现在 _Overview_ > _Essentials_。
 
 ![Your application (client) ID](./_images/advanced/get-client-id.png)
 
 你的 client secret 需要手动获取
 
-1. 点击 _Certificates & secrets_ 。
-2. 点击 _New client secret_ 。
-3. 创建一个新 secret ，描述为 `client_secret` 。
-4. 将 _Expires_ 设置为 `Custom` 。
+1. 点击 _Certificates & secrets_。
+2. 点击 _New client secret_。
+3. 创建一个新 secret ，描述为 `client_secret`。
+4. 将 _Expires_ 设置为 `Custom`。
 5. 将 _Start_ 与 _End_ 设置为能设置的最长时间。
 
 ![Generate a client secret](./_images/advanced/create-client-secret.png)
@@ -63,13 +63,13 @@ Microsoft Graph API 可以设置 API 范围，我们只需要以下三个（ `ap
 user.read files.read.all offline_access
 ```
 
-点击 _API permissions_ ，再点击 _Microsoft Graph_ ，再点击 _Delegated permissions_ ，然后搜索：
+点击 _API permissions_，再点击 _Microsoft Graph_，再点击 _Delegated permissions_，然后搜索：
 
 - User.Read（这应该一开始就勾上了）
 - Files.Read.All
 - offline_access
 
-选择全部三个并点击 _Add permissions_ 。
+选择全部三个并点击 _Add permissions_。
 
 ![Modify Microsoft Graph API permissions](./_images/advanced/add-required-permissions.png)
 
@@ -77,7 +77,7 @@ user.read files.read.all offline_access
 
 ### 修改 `api.config.js`
 
-你可以直接将 `clientId` 修改为你自己的 `clientId` 。
+你可以直接将 `clientId` 修改为你自己的 `clientId`。
 
 但是，client secret 需要保密，你需要在下面进行 AES 加密：
 
@@ -94,9 +94,9 @@ U2FsdGVkX1830zo3/pFDqaBCVBb37iLw3WnBDWGF9GIB2f4apzv0roemp8Y+iIxI3Ih5ecyukqELQEGz
 如果你修改了 `redirectUri` 为其他值，你也要在 `api.config.js` 里设置好。
 
 <Callout emoji="🗣">
-  详情请参考 [关于使用自己的 secret 进行 AES 加密方式的小白解决办法](https://github.com/spencerwooo/onedrive-vercel-index/discussions/234) 。
+  详情请参考 [关于使用自己的 secret 进行 AES 加密方式的小白解决办法](https://github.com/spencerwooo/onedrive-vercel-index/discussions/234)。
 </Callout>
 
 ## 自定义域名
 
-详情请参考 [Custom Domains - Vercel](https://vercel.com/docs/concepts/projects/custom-domains) 。
+详情请参考 [Custom Domains - Vercel](https://vercel.com/docs/concepts/projects/custom-domains)。
