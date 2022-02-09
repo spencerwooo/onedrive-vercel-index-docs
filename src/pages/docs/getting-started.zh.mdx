@@ -24,7 +24,7 @@ import Callout from 'nextra-theme-docs/callout'
 onedrive-vercel-index 本质上就是由 Next.js 构建的模板，你可以将其免费部署在 Vercel、Netlify 或者其他托管平台上。下面我们将 **完全从头开始** 创建你自己的 onedrive-vercel-index。
 
 <Callout emoji="⚠️" type="warning">
-  如果你在 2022 年之前部署过此项目，请参考 [迁移到 2022 年的新版本](./migration/if-you-deployed-before-2022.zh) 。
+  如果你在 2022 年之前部署过此项目，请参考 [迁移到 2022 年的新版本](./migration/if-you-deployed-before-2022.zh)。
 </Callout>
 
 ## Fork 此项目
@@ -41,12 +41,12 @@ onedrive-vercel-index 本质上就是由 Next.js 构建的模板，你可以将�
 
 请根据自身情况修改 [`config/site.config.js`](https://github.com/spencerwooo/onedrive-vercel-index/blob/main/config/site.config.js)：
 
-- `userPrincipalName` - 是用来在 OAuth 步骤时认证你的个人信息的。通常是你的 **微软账户邮箱** 。
+- `userPrincipalName` - 是用来在 OAuth 步骤时认证你的个人信息的。通常是你的 **微软账户邮箱**。
 - `baseDirectory` - 是你要分享的 OneDrive 目录。你必须保证此目录有效且与此参数一致。（你可以直接在 OneDrive 内创建一个叫做 `Public` 文件夹，并将此项设置为 `/Public`。）
 
 ![You must change these two configs for your deployment to work](./_images/getting-started/change-site-config-js.png)
 
-<Callout emoji="🍀">有些设置是为你自定义自己的网页而准备的，详情请参考 [自定义配置](./custom-configs.zh) 。</Callout>
+<Callout emoji="🍀">有些设置是为你自定义自己的网页而准备的，详情请参考 [自定义配置](./custom-configs.zh)。</Callout>
 
 ### 修改 API 参数（可选项）
 
@@ -67,9 +67,9 @@ onedrive-vercel-index 本质上就是由 Next.js 构建的模板，你可以将�
   driveApi: "https://microsoftgraph.chinacloudapi.cn/v1.0/me/drive",
   ```
 
-  {/* 如果你需要使用代理下载功能，请修改 `directLinkRegex` 。详情请参考 [Proxied download (disabled)](). */}
+  {/* 如果你需要使用代理下载功能，请修改 `directLinkRegex`。详情请参考 [Proxied download (disabled)](). */}
 
-- OneDrive 企业版、教育版以及 E5 订阅的用户需要注意：先尝试在不修改 `config/api.config.js` 的情况下进行 OAuth **无论你是否有管理权限** 。如果你被告知需要管理权限，你就要使用你自己的 `clientId` 与 `clientSecret` 了。详情请参考 [使用你自己的 clientid 与 secret](./advanced.zh) 。
+- OneDrive 企业版、教育版以及 E5 订阅的用户需要注意：先尝试在不修改 `config/api.config.js` 的情况下进行 OAuth **无论你是否有管理权限**。如果你被告知需要管理权限，你就要使用你自己的 `clientId` 与 `clientSecret` 了。详情请参考 [使用你自己的 clientid 与 secret](./advanced.zh)。
 
 ## 导入到 Vercel 并部署
 
@@ -88,7 +88,7 @@ onedrive-vercel-index 本质上就是由 Next.js 构建的模板，你可以将�
 
 创建一个 Redis 数据库，并且将数据库的访问链接填写到 Vercel 的 `REDIS_URL` 环境变量里。Redis 数据库是用于存储在 OAuth 时获取的 `access_tokens` 与 `refresh_tokens` 的。
 
-- 我们推荐使用 **Upstash** ，它完全免费，并且与 Vercel 深度合作，详情请参考 [Vercel Integration](https://docs.upstash.com/redis/howto/vercelintegration) 。（请忽略最后一步时让你 _Create Your Redis Client_ ，onedrive-vercel-index 已经为你处理好了）。
+- 我们推荐使用 **Upstash** ，它完全免费，并且与 Vercel 深度合作，详情请参考 [Vercel Integration](https://docs.upstash.com/redis/howto/vercelintegration)。（请忽略最后一步时让你 _Create Your Redis Client_ ，onedrive-vercel-index 已经为你处理好了）。
 - 你可以使用你自己的 Redis 数据库，只要有 Vercel 能用的访问链接就行。
 
 无论你用什么方式，你应该在 Vercel 的 `REDIS_URL` 环境变量里填好一个类似这样的 Redis URL：
@@ -107,7 +107,7 @@ rediss://:xxx...@some-thing-like-35533.upstash.io:35533
 
 ### 重新部署
 
-最后，重新进行一次部署。并在部署完成后访问 Vercel 提供的链接，`onedrive-vercel-index` 将会引导你进行 OAuth 认证。你也可以在 Vercel 自定义访问链接，详情请参考 [自定义域名](./advanced.zh) 。
+最后，重新进行一次部署。并在部署完成后访问 Vercel 提供的链接，`onedrive-vercel-index` 将会引导你进行 OAuth 认证。你也可以在 Vercel 自定义访问链接，详情请参考 [自定义域名](./advanced.zh)。
 
 ![Checking the deployed domain and navigate to the live site](./_images/getting-started/check-deployed-domain.png)
 
@@ -135,7 +135,7 @@ rediss://:xxx...@some-thing-like-35533.upstash.io:35533
 
 <Callout emoji="⚠️" type="warning">
   如果你的帐户没有管理权限，那么你需要使用你自己的 `client_id` 与 `client_secret`。详情请参考 [使用你自己的 clientid 与
-  secret](./advanced.zh) 。
+  secret](./advanced.zh)。
 </Callout>
 
 ![The [localhost](http://localhost) URL that you would be redirected to](./_images/getting-started/step2-redirect-code-localhost.png)
