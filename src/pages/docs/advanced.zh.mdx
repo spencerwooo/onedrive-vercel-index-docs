@@ -5,11 +5,11 @@ import Encryption from '../../components/encryption'
 
 <Callout emoji="♻️">此页持续更新中</Callout>
 
-这里有些高级设置，您可能需要了解一下。
+这里有些高级设置，你可能需要了解一下。
 
-## 使用您自己的 clientid 与 secret
+## 使用你自己的 clientid 与 secret
 
-如果您的账户没有管理权限，那么您就无法使用公共的 `clientId` 与 `clientSecret` 。这个情况下，您就要生成您自己的 client id 与 secret 了。
+如果你的账户没有管理权限，那么你就无法使用公共的 `clientId` 与 `clientSecret` 。这个情况下，你就要生成你自己的 client id 与 secret 了。
 
 ### 注册一个应用程序
 
@@ -20,7 +20,7 @@ import Encryption from '../../components/encryption'
 
 创建一个应用程序：
 
-1. 登入您的微软账户，点击 _New registration_ 。
+1. 登入你的微软账户，点击 _New registration_ 。
 2. 输入一个名字，例如 my-onedrive-vercel-index 。
 3. 将 _Supported account types_ 设置为：
 
@@ -35,13 +35,13 @@ import Encryption from '../../components/encryption'
 
 ![Register a new application](./_images/advanced/register-an-application.png)
 
-### 获取您的 client id 与 secret
+### 获取你的 client id 与 secret
 
-您的应用 (client) ID 就是 `api.config.js` 里的 `clientId` ，它应该出现在 _Overview_ > _Essentials_ 。
+你的应用 (client) ID 就是 `api.config.js` 里的 `clientId` ，它应该出现在 _Overview_ > _Essentials_ 。
 
 ![Your application (client) ID](./_images/advanced/get-client-id.png)
 
-您的 client secret 需要手动获取
+你的 client secret 需要手动获取
 
 1. 点击 _Certificates & secrets_ 。
 2. 点击 _New client secret_ 。
@@ -73,17 +73,17 @@ user.read files.read.all offline_access
 
 ![Modify Microsoft Graph API permissions](./_images/advanced/add-required-permissions.png)
 
-<Callout>现在，您就准备好您自己的 `clientId` 与 `clientSecret` 了。</Callout>
+<Callout>现在，你就准备好你自己的 `clientId` 与 `clientSecret` 了。</Callout>
 
 ### 修改 `api.config.js`
 
-您可以直接将 `clientId` 修改为您自己的 `clientId` 。
+你可以直接将 `clientId` 修改为你自己的 `clientId` 。
 
-但是，client secret 需要保密，您需要在下面进行 AES 加密：
+但是，client secret 需要保密，你需要在下面进行 AES 加密：
 
 <Encryption />
 
-填写 client secret 后，您应该得到一个长得像这样的字符串：
+填写 client secret 后，你应该得到一个长得像这样的字符串：
 
 ```
 U2FsdGVkX1830zo3/pFDqaBCVBb37iLw3WnBDWGF9GIB2f4apzv0roemp8Y+iIxI3Ih5ecyukqELQEGzZlYiWg==
@@ -91,7 +91,7 @@ U2FsdGVkX1830zo3/pFDqaBCVBb37iLw3WnBDWGF9GIB2f4apzv0roemp8Y+iIxI3Ih5ecyukqELQEGz
 
 将它替换到 `obfuscatedClientSecret` 里。
 
-如果您修改了 `redirectUri` 为其他值，您也要在 `api.config.js` 里设置好。
+如果你修改了 `redirectUri` 为其他值，你也要在 `api.config.js` 里设置好。
 
 <Callout emoji="🗣">
   详情请参考 [关于使用自己的 secret 进行 AES 加密方式的小白解决办法](https://github.com/spencerwooo/onedrive-vercel-index/discussions/234) 。

@@ -1,9 +1,10 @@
+/* eslint-disable import/no-anonymous-default-export */
 import Logo from './components/logo'
 
 export default {
   i18n: [
-  { locale: 'en', text: 'English' },
-  { locale: 'zh', text: '中文' }
+    { locale: 'en', text: 'English' },
+    { locale: 'zh', text: '中文' }
   ],
   github: 'https://github.com/spencerwooo/onedrive-vercel-index',
   projectLink: 'https://github.com/spencerwooo/onedrive-vercel-index',

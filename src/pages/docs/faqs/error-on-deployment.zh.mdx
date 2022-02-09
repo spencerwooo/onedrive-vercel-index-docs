@@ -20,10 +20,10 @@ import Callout from 'nextra-theme-docs/callout'
 }
 ```
 
-您没有指定一个有效的 OneDrive 进行共享。
+你没有指定一个有效的 OneDrive 进行共享。
 
-1. 您分享的文件必须存放在 OneDrive 的一个文件夹里。
-2. 您必须在  `site.config.js` 的 `baseDirectory` 处指定该文件夹的绝对路径。
+1. 你分享的文件必须存放在 OneDrive 的一个文件夹里。
+2. 你必须在  `site.config.js` 的 `baseDirectory` 处指定该文件夹的绝对路径。
 
 <Callout emoji="💬">
 相关讨论：
@@ -37,10 +37,10 @@ import Callout from 'nextra-theme-docs/callout'
 { "error": { "code": "504", "message": "An error occurred with your deployment" } }
 ```
 
-这可能由多个错误引起，但可以确定的是您填错了 Redis URL 或者 `site.config.js` 里的内容。
+这可能由多个错误引起，但可以确定的是你填错了 Redis URL 或者 `site.config.js` 里的内容。
 
-1. 请检查 `baseDirectory` 。如果您在旧版遇到了此问题，解决办法与上面的 `itemNotFound` 一致。
-2. 请检查您在 Vercel 的 `REDIS_URL` 环境变量是否填好了 Redis URL 。**如果您使用 Upstash ，请启用 SSL** 该 URL 长得很像 `rediss://:xxx@us1-xxx.upstash.io:xxx` ，请注意是 `rediss` 而非 `redis` ，是 `://:xx` 而非 `://xx` 。
+1. 请检查 `baseDirectory` 。如果你在旧版遇到了此问题，解决办法与上面的 `itemNotFound` 一致。
+2. 请检查你在 Vercel 的 `REDIS_URL` 环境变量是否填好了 Redis URL 。**如果你使用 Upstash ，请启用 SSL** 该 URL 长得很像 `rediss://:xxx@us1-xxx.upstash.io:xxx` ，请注意是 `rediss` 而非 `redis` ，是 `://:xx` 而非 `://xx` 。
 
 <Callout emoji="💬">
 相关讨论：

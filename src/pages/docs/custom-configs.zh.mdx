@@ -7,32 +7,32 @@ import Video from '../../components/video'
 有两个配置文件，分别是： `config/api.config.js` 与 `config/site.config.js` 。
 
 - `config/api.config.js` - 是用来定义 API 参数的。 **OneDrive 国际版用户无需更改任何参数**
-- `config/site.config.js` - 是用来自定义您的网页的，您可以自定义标题、图标、字体、联系方式等等。
+- `config/site.config.js` - 是用来自定义你的网页的，你可以自定义标题、图标、字体、联系方式等等。
 
 ## 自定义 API 参数
 
-**您自己觉得有必要修改时再修改**
+**你自己觉得有必要修改时再修改**
 
-- 如果您的账户没有管理权限，那么您需要使用自己的 `clientId` 与 `obfuscatedClientSecret` 。详情请参考 [使用您自己的 clientid 与 secret](./advanced.zh) 。
-- 如果您是 OneDrive 世纪互联 用户，您需要修改 `authApi` 与 `driveApi` ，您应该已经在 [立即上手](./getting-started.zh) 做过了。
+- 如果你的账户没有管理权限，那么你需要使用自己的 `clientId` 与 `obfuscatedClientSecret` 。详情请参考 [使用你自己的 clientid 与 secret](./advanced.zh) 。
+- 如果你是 OneDrive 世纪互联 用户，你需要修改 `authApi` 与 `driveApi` ，你应该已经在 [立即上手](./getting-started.zh) 做过了。
 
-{/* 如果您需要使用代理下载功能，请修改 `directLinkRegex` 。详情请参考 [Proxied download (disabled)](todo). */}
+{/* 如果你需要使用代理下载功能，请修改 `directLinkRegex` 。详情请参考 [Proxied download (disabled)](todo). */}
 
 ## 自定义网页
 
-有些设置是为您自定义自己的网页而准备的，它们在 `config/site.config.js` 里：
+有些设置是为你自定义自己的网页而准备的，它们在 `config/site.config.js` 里：
 
 ### `userPrincipalName`
 
-您应该已经在 [立即上手](./getting-started.zh) 做过了。
+你应该已经在 [立即上手](./getting-started.zh) 做过了。
 
 ### `icon` - 图标和 favicons
 
 ![Customising your site's icons and favicons]( ./_images/custom-configs/customising-icons.png)
 
-`icon` - 是标题栏中标题左边的图标。 **它应该被放置在您的 GitHub 项目的 [`/public`](https://github.com/spencerwooo/onedrive-vercel-index/tree/main/public) 目录，而不是您的 Onedrive 目录** ，并且填上它在 `/public` 目录内的路径。
+`icon` - 是标题栏中标题左边的图标。 **它应该被放置在你的 GitHub 项目的 [`/public`](https://github.com/spencerwooo/onedrive-vercel-index/tree/main/public) 目录，而不是你的 Onedrive 目录** ，并且填上它在 `/public` 目录内的路径。
 
-比如说，您的项目的 `/public` 路径长这样：
+比如说，你的项目的 `/public` 路径长这样：
 
 ```
 .
@@ -44,7 +44,7 @@ import Video from '../../components/video'
 └── ...
 ```
 
-然后您想让 `64.png` 作为您的网页图标，那么您应该将 `site.config.js` 里的 `icon` 设置为 `/icons/64.png` 。您的网页的 favicons 也应该放置在 `/public` 目录，请访问 [favicon.io](http://favicon.io) 以生成您的 favicons 。
+然后你想让 `64.png` 作为你的网页图标，那么你应该将 `site.config.js` 里的 `icon` 设置为 `/icons/64.png` 。你的网页的 favicons 也应该放置在 `/public` 目录，请访问 [favicon.io](http://favicon.io) 以生成你的 favicons 。
 
 ### `title` - 网页标题
 
@@ -52,7 +52,7 @@ import Video from '../../components/video'
 
 ### `baseDirectory`
 
-您想用 onedrive-vercel-index 分享的 OneDrive 目录，您应该已经在 [立即上手](./getting-started.zh) 做过了。
+你想用 onedrive-vercel-index 分享的 OneDrive 目录，你应该已经在 [立即上手](./getting-started.zh) 做过了。
 
 ### `maxItems`
 
@@ -70,30 +70,30 @@ import Video from '../../components/video'
 - `googleFontMono` - onedrive-vercel-index 使用的 monospace 字体。
 - `googleFontLinks` - 谷歌字体资源的链接。
 
-您可以在 [fonts.google.com](https://fonts.google.com/) 生成您想用的字体家族的名字和链接。
+你可以在 [fonts.google.com](https://fonts.google.com/) 生成你想用的字体家族的名字和链接。
 
 ### `footer`
 
-网页的页脚。您可以在这里写 HTML ，但您要注意双引号 - 您需要将 `"` 替换为 `\"` 。您可以在这里写任何东西。如果您喜欢徽章，可以在 [shields.io](http://shields.io) 生成一些。😃
+网页的页脚。你可以在这里写 HTML ，但你要注意双引号 - 你需要将 `"` 替换为 `\"` 。你可以在这里写任何东西。如果你喜欢徽章，可以在 [shields.io](http://shields.io) 生成一些。😃
 
 ### `protectedRoutes`
 
-您可以创建一个需要密码才能访问的文件夹，详情请参考 [私密文件夹](./features/protected-folders.zh) 。
+你可以创建一个需要密码才能访问的文件夹，详情请参考 [私密文件夹](./features/protected-folders.zh) 。
 
 ### `email`
 
-`email` - 这是可选项，如果您不想展示任何邮箱，您可以删到只剩 `""`：
+`email` - 这是可选项，如果你不想展示任何邮箱，你可以删到只剩 `""`：
 
 ```diff
 - "email": "mailto:spencer.wushangbo@gmail.com",
 + "email": "",
 ```
 
-我还是建议您放上一些联系方式的。
+我还是建议你放上一些联系方式的。
 
 ### `links`
 
-`links` - 您可以添加您想要展示的链接，格式为 `{ "name": "xxx", "link": "xxx" }` 。我们已经支持所有来自 Font Awesome 的图标，只要您有 `name` 。请查看下面的演示：
+`links` - 你可以添加你想要展示的链接，格式为 `{ "name": "xxx", "link": "xxx" }` 。我们已经支持所有来自 Font Awesome 的图标，只要你有 `name` 。请查看下面的演示：
 
 <Callout emoji="💦">
   演示中出现的所有链接均由 GitHub Copilot 生成，不包含任何个人信息。
@@ -107,7 +107,7 @@ import Video from '../../components/video'
 
 `datetimeFormat` - 是由 [`day.js`](https://day.js.org/) 定义的日期格式。详情请参考 [`day.js` Docs](https://day.js.org/docs/en/display/format) 。
 
-默认格式为不带时区的完整 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 格式，并且用空格代替字母 `T` ，就像 `2006-01-02 15:04:05` 。如果您懒得查阅文档，想要自己构建的话，这里有一些 `day.js` 格式：
+默认格式为不带时区的完整 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 格式，并且用空格代替字母 `T` ，就像 `2006-01-02 15:04:05` 。如果你懒得查阅文档，想要自己构建的话，这里有一些 `day.js` 格式：
 
 - `new Date().toLocaleString('en-US')`： `M/D/YYYY, h:mm:ss A` ，效果是 `1/2/2006, 3:04:05 PM` 。
 - `new Date().toLocaleString('en-GB')`： `DD/MM/YYYY, HH:mm:ss` ，效果是 `02/01/2006, 15:04:05` 。
