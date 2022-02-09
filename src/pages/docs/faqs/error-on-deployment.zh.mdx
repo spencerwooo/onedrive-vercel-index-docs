@@ -1,0 +1,51 @@
+import Callout from 'nextra-theme-docs/callout'
+
+# 部署时出现错误
+
+### ItemNotFound
+
+```json
+{
+  "error": {
+    "error": {
+      "code": "itemNotFound",
+      "message": "The resource could not be found.",
+      "innerError": {
+        "date": "2022-01-14T09:29:32",
+        "request-id": "7fee4456-abd6-4258-aeb0-4f03ee43bd13",
+        "client-request-id": "7fee4456-abd6-4258-aeb0-4f03ee43bd13"
+      }
+    }
+  }
+}
+```
+
+你没有指定一个有效的 OneDrive 进行共享。
+
+1. 你分享的文件必须存放在 OneDrive 的一个文件夹里。
+2. 你必须在  `site.config.js` 的 `baseDirectory` 处指定该文件夹的绝对路径。
+
+<Callout emoji="💬">
+相关讨论：
+- [这是啥问题？#274](https://github.com/spencerwooo/onedrive-vercel-index/discussions/274)
+- [部署完后报错 #240](https://github.com/spencerwooo/onedrive-vercel-index/discussions/240)
+</Callout>
+
+### Error 504
+
+```json
+{ "error": { "code": "504", "message": "An error occurred with your deployment" } }
+```
+
+这可能由多个错误引起，但可以确定的是你填错了 Redis URL 或者 `site.config.js` 里的内容。
+
+1. 请检查 `baseDirectory`。如果你在旧版遇到了此问题，解决办法与上面的 `itemNotFound` 一致。
+2. 请检查你在 Vercel 的 `REDIS_URL` 环境变量是否填好了 Redis URL。**如果你使用 Upstash ，请启用 SSL** 该 URL 长得很像 `rediss://:xxx@us1-xxx.upstash.io:xxx` ，请注意是 `rediss` 而非 `redis` ，是 `://:xx` 而非 `://xx`。
+
+<Callout emoji="💬">
+相关讨论：
+- [这种怎么解决啊 #267](https://github.com/spencerwooo/onedrive-vercel-index/discussions/267)
+- [在 Vercel 下部署遇到 504 错误，在本地运行没有问题 #261](https://github.com/spencerwooo/onedrive-vercel-index/discussions/261)
+- [Oops, that's a four-oh-four. #238](https://github.com/spencerwooo/onedrive-vercel-index/discussions/238)
+- [504 Error #247](https://github.com/spencerwooo/onedrive-vercel-index/discussions/247)
+</Callout>

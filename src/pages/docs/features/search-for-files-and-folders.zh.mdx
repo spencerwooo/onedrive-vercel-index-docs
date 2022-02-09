@@ -1,0 +1,24 @@
+import Callout from 'nextra-theme-docs/callout'
+
+# 搜索文件与文件夹
+
+现已支持原生文件搜索！按 `Ctrl` 或 `⌘ + K` 来打开搜索界面，按 `ESC` 来关闭。
+
+![Search inside your OneDrive shared files with OneDrive's official API](../_images/features/search-for-files-and-folders.png)
+
+## 注意事项
+
+- 这个功能不太好用，因为微软的搜索 API 很烂。
+- 对 CJK 字符的搜索极为受限。
+
+## 安全考虑
+
+除了上面的注意事项：
+
+- **你的私密文件夹中的内容将包含在搜索结果中**
+- 这意味着你的 **文件名和路径**（无论是否在私密文件夹中）将被展示。
+- 其他人仍然需要输入密码以访问你的私密文件夹。
+
+<Callout emoji="🗣">
+  详情请参考 [Supporting search for all versions of OneDrive #295](https://github.com/spencerwooo/onedrive-vercel-index/discussions/295)
+</Callout>

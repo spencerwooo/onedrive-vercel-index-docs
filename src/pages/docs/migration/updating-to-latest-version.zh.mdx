@@ -1,0 +1,30 @@
+# 更新你的项目
+
+基本上你的项目是从本项目中分支出去的，详情请参考 [GitHub - Syncing a fork](https://docs.github.com/cn/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)。
+
+## 在网页更新
+
+- 打开你的项目的 GitHub 页面。
+- 点击 Fetch upstream ，将会出现一个下拉菜单。
+- 检查上游的提交细节，没问题的话就点击 Fetch and merge。
+- 如果上游的更改与你的项目存在冲突，GitHub 会推荐你开启一个 Pull request 以解决冲突。
+
+## 在命令行更新
+
+将你的项目 Clone 到本地，然后：
+
+```bash
+# 拉取上游的更改
+git fetch upstream
+
+# 检查你的项目的默认分支（通常是 main）
+git checkout main
+
+# 合并上游的更改
+git merge upstream/main
+
+# 如果存在冲突，便在本地解决
+# 提交更改并推送到 GitHub
+git commit -m "xxx"
+git push
+```

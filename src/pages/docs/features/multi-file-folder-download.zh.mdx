@@ -1,0 +1,18 @@
+import Callout from 'nextra-theme-docs/callout'
+import Video from '../../../components/video'
+
+# 多文件与文件夹下载
+
+<Callout emoji="⚠️" type="warning">
+  事实上它性能不太好，所以我只推荐你用它下载数量大的小文件，而不推荐下载大文件。
+</Callout>
+
+<Video src="/videos/multi-file-folder-download.mp4" ratio={1246 / 2246} />
+
+我们用 JSZip 来压缩下载后的文件，下载完成后你将得到一个 `zip` 文件。
+
+在下载很多小文件时它超好用，但是在下载大文件时它超慢。
+
+你选择的文件与文件夹将被依次下载并压缩。
+
+<Callout emoji="🗣">在 PR #177 与 #169 进行相关讨论</Callout>
