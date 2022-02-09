@@ -9,5 +9,14 @@ module.exports = withNextra({
     locales: ['en', 'zh'],
     defaultLocale: 'en'
   },
+  async redirects() {
+    return [
+      {
+        source: '/sponsor',
+        destination: '/sponsor/ways',
+        permanent: true
+      }
+    ]
+  },
   reactStrictMode: true
 })

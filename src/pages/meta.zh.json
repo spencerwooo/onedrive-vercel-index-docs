@@ -9,11 +9,11 @@
     "type": "nav"
   },
   "blog": {
-    "title": "Blog",
+    "title": "博客",
     "type": "nav"
   },
   "sponsor": {
-    "title": "赞助者",
+    "title": "赞助",
     "type": "nav"
   }
 }
