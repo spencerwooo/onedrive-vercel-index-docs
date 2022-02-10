@@ -2,6 +2,21 @@
 
 🎉 This is a constantly updating page of new updates for this project. Also available at [What's new? #325](https://github.com/spencerwooo/onedrive-vercel-index/discussions/325).
 
+#### 2022/2/10
+
+- 🚀 A few performance boosts:
+  - Thumbnails are now requested separately after files are initially loaded. This improves file load performance as we are requesting fewer items from OneDrive's API on initial request. (However your thumbnails may load slower for half a second or so.)
+  - **Edge caching is now in use:** we are now leveraging Vercel's edge function caching and `stale-while-revalidate` options, so you should experience extremely faster load speed for folder listings.) **Cache are valid for 10 minutes on the edge.**
+- 👨‍💻 Code highlighting: we dropped dependency `Prism.js`, syntax highlighting is now performed by `react-syntax-highlighter` (using `highlight.js` under-the-hood. Support for different languages are imported asynchronous (so you may see a slight delay before the code is actually highlighted).
+
+  |                              Light                              |                             Dark                              |
+  | :-------------------------------------------------------------: | :-----------------------------------------------------------: |
+  | ![Light code syntax highlight](./_images/light-code-syntax.png) | ![Dark code syntax highlight](./_images/dark-code-syntax.png) |
+
+- 🎸 Audio preview (music player) now shows the thumbnail of the album if available.
+
+  ![Audio Player](./_images/audio-player.png)
+
 #### 2022/2/8
 
 - 🇨🇳/🇬🇧 - Project is i18n-ed, enjoy. 🥱
