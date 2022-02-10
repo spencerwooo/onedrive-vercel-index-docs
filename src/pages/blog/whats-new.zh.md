@@ -2,6 +2,21 @@
 
 🎉 此项目的更新内容将在此页持续记录，详情请参考 [What's new? #325](https://github.com/spencerwooo/onedrive-vercel-index/discussions/325)。
 
+#### 2022/2/10
+
+- 🚀 一点儿性能提升：
+  - 缩略图现在在文件完成加载后才单独进行请求。因为减少了 OneDrive API 的请求量，所以提高了些许文件加载性能。
+  - **正式启用边缘缓存** 我们使用了 Vercel 的边缘函数缓存服务以及 `stale-while-revalidate` 功能，你将体验到飞快的文件列表加载速度。 **边缘缓存10分钟内有效**
+- 👨‍💻 代码高亮： 我们不再使用 `Prism.js` 依赖，代码高亮现在由 `react-syntax-highlighter` 处理。（内部使用 `highlight.js` ，而对多语言的支持是异步导入的，所以高亮显示会比代码加载迟一点儿。）
+
+  |                              Light                              |                             Dark                              |
+  | :-------------------------------------------------------------: | :-----------------------------------------------------------: |
+  | ![Light code syntax highlight](./_images/light-code-syntax.png) | ![Dark code syntax highlight](./_images/dark-code-syntax.png) |
+
+- 🎸 音频预览（音乐播放器）现在能显示音频封面了！
+
+  ![Audio Player](./_images/audio-player.png)
+
 #### 2022/2/8
 
 - 🇨🇳/🇬🇧 - 项目已汉化 🥱
