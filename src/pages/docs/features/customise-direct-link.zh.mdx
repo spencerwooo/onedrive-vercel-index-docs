@@ -1,0 +1,32 @@
+# 自定义文件直链
+
+## TL;DR
+
+你可以将文件名以及文件扩展名（或者任何名字）附加到文件的直链的末尾。所以，原先默认的：
+
+```
+https://drive.spencerwoo.com/api?path=/🎻%20Genshin%20playlist/【原神】胡桃：啊对对对对.mp4&raw=true
+```
+
+……也可以写成这样：
+
+```
+https://drive.spencerwoo.com/api/name/【原神】胡桃：啊对对对对.mp4?path=/🎻%20Genshin%20playlist/【原神】胡桃：啊对对对对.mp4&raw=true
+```
+
+## 注意
+
+- URL 参数中的 `name` 可以是任何名字，不会影响直链指向原文件下载链接。
+- URL 参数中的 `path` 是文件路径，而 URL 参数中的 `raw` 用于让 API 跳转到文件的直链而不是渲染文件预览。
+- 我们只是用 URL 参数中的 `path` 来添加一个有效的文件名和扩展名到 API 请求中，这样 URL 的末尾就会是文件名。（不包括后面的 URL query 参数。）
+
+![Customise direct link](../_images/features/customise-direct-link.png)
+
+## 为什么？有什么用？
+
+为了能够将文件（特别是视频文件资源）嵌入到某些服务（例如：[Notion](https://notion.so)），嵌入的直链 URL 中需要包含文件扩展名，以便服务能够正确识别文件类型。
+
+相关讨论：
+
+- [有没有图床功能？ #290](https://github.com/spencerwooo/onedrive-vercel-index/discussions/290)
+- [Support custom url final component name for Notion #306](https://github.com/spencerwooo/onedrive-vercel-index/pull/306)
