@@ -6,7 +6,7 @@
 
 - 🚀 性能提升：
   - 缩略图现在在文件完成加载后单独进行请求。因为减少了 OneDrive API 的请求量，所以提升了些许文件夹列表加载速度。
-  - **启用 Vercel 边缘缓存。** 我们使用了 Vercel 的边缘函数缓存以及 `stale-while-revalidate` 功能，你将体验到飞快的文件列表加载速度。 **边缘缓存10分钟内有效。** 参考：[🚀 Edge caching #407](https://github.com/spencerwooo/onedrive-vercel-index/discussions/407)
+  - **启用 Vercel 边缘缓存。** 我们使用了 Vercel 的边缘函数缓存以及 `stale-while-revalidate` 功能，你将体验到飞快的文件列表加载速度。 **边缘缓存一小时内有效。** 参考：[🚀 Edge caching #407](https://github.com/spencerwooo/onedrive-vercel-index/discussions/407)
 - 👨‍💻 代码高亮： 我们不再使用 `Prism.js` 依赖，代码高亮现在由 `react-syntax-highlighter` 处理。（内部使用 `highlight.js`，对不同语言的高亮支持是异步导入的，所以高亮会在代码加载完成后显示。）
 
   |                              Light                              |                             Dark                              |

@@ -6,7 +6,7 @@
 
 - 🚀 A few performance boosts:
   - Thumbnails are now requested separately after files are initially loaded. This improves file load performance as we are requesting fewer items from OneDrive's API on initial request. (However your thumbnails may load slower for half a second or so.)
-  - **Edge caching is now in use:** we are now leveraging Vercel's edge function caching and `stale-while-revalidate` options, so you should experience extremely faster load speed for folder listings.) **Cache are valid for 10 minutes on the edge.** Check: [🚀 Edge caching #407](https://github.com/spencerwooo/onedrive-vercel-index/discussions/407).
+  - **Edge caching is now in use:** we are now leveraging Vercel's edge function caching and `stale-while-revalidate` options, so you should experience extremely faster load speed for folder listings.) **Cache are valid for an hour on the edge.** Check: [🚀 Edge caching #407](https://github.com/spencerwooo/onedrive-vercel-index/discussions/407).
 - 👨‍💻 Code highlighting: we dropped dependency `Prism.js`, syntax highlighting is now performed by `react-syntax-highlighter` (using `highlight.js` under-the-hood. Support for different languages are imported asynchronous (so you may see a slight delay before the code is actually highlighted).
 
   |                              Light                              |                             Dark                              |
