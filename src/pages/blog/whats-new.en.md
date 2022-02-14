@@ -74,7 +74,7 @@
 #### 2022/1/29
 
 - ❗**Breaking** - Config files changed from `.json` to `.config.js`, relevant comments added. You can now move `userPrincipleName` to Vercel's environment variables (to avoid exposing your email address publicly).
-- CORS headers are now present in `?raw=true` routes for OneDrive raw file links.
+- CORS headers are now present in ~~`?raw=true`~~ `/api/raw` routes for OneDrive raw file links.
 
 #### 2022/1/22
 

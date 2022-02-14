@@ -74,7 +74,7 @@
 #### 2022/1/29
 
 - ❗**重要** - 配置文件已从 `.json` 更换为 `.config.js` ，并添加了注释。同时为了隐私着想，现在你还可以将 `userPrincipleName` 在 Vercel 的环境变量里定义。
-- CORS 头现在出现在 OneDrive 的 `?raw=true` 文件直链路由中。
+- CORS 头现在出现在 OneDrive 的 ~~`?raw=true`~~ `/api/raw` 文件直链路由中。
 
 #### 2022/1/22
 
