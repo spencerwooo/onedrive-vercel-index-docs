@@ -2,11 +2,22 @@
 
 🎉 此项目的更新内容将在此页持续记录，详情请参考 [What's new? #325](https://github.com/spencerwooo/onedrive-vercel-index/discussions/325)。
 
+#### 2022/2/14 💞
+
+- 除了受密码保护的文件夹，以及文件直链 API 路径外，其他所有 API 路径均使用 Vercel 边缘缓存（有效期 1 分钟）：
+
+  ```
+  Cache-Control: max-age=0, s-maxage=60, stale-while-revalidate
+  ```
+
+- 文件直链 API 由 `/api?path=<file>&raw=true` 更改为 `/api/raw?path=<file>`，无缓存。
+- 文件直链 API 接受 URL 参数 `&odpt=<hashed_token>` 用于受密码保护文件的鉴权。
+
 #### 2022/2/10
 
 - 🚀 性能提升：
   - 缩略图现在在文件完成加载后单独进行请求。因为减少了 OneDrive API 的请求量，所以提升了些许文件夹列表加载速度。
-  - **启用 Vercel 边缘缓存。** 我们使用了 Vercel 的边缘函数缓存以及 `stale-while-revalidate` 功能，你将体验到飞快的文件列表加载速度。 **边缘缓存一小时内有效。** 参考：[🚀 Edge caching #407](https://github.com/spencerwooo/onedrive-vercel-index/discussions/407)
+  - **启用 Vercel 边缘缓存。** 我们使用了 Vercel 的边缘函数缓存以及 `stale-while-revalidate` 功能，你将体验到飞快的文件列表加载速度。 **边缘缓存一分钟内有效。** 参考：[🚀 Edge caching #407](https://github.com/spencerwooo/onedrive-vercel-index/discussions/407)
 - 👨‍💻 代码高亮： 我们不再使用 `Prism.js` 依赖，代码高亮现在由 `react-syntax-highlighter` 处理。（内部使用 `highlight.js`，对不同语言的高亮支持是异步导入的，所以高亮会在代码加载完成后显示。）
 
   |                              Light                              |                             Dark                              |

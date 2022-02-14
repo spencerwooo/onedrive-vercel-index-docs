@@ -2,11 +2,22 @@
 
 🎉 This is a constantly updating page of new updates for this project. Also available at [What's new? #325](https://github.com/spencerwooo/onedrive-vercel-index/discussions/325).
 
+#### 2022/2/14 💞
+
+- Other than password protected routes, and raw file link redirect API, all other API routes are using Vercel edge caching mechanisms (fresh for 60 seconds):
+
+  ```
+  Cache-Control: max-age=0, s-maxage=60, stale-while-revalidate
+  ```
+
+- Raw file link redirect API changed from `/api?path=<file>&raw=true` to `/api/raw?path=<file>`, no cache applied.
+- Raw file link redirect API accepts the URL parameter `&odpt=<hashed_token>` for password authentication.
+
 #### 2022/2/10
 
 - 🚀 A few performance boosts:
   - Thumbnails are now requested separately after files are initially loaded. This improves file load performance as we are requesting fewer items from OneDrive's API on initial request. (However your thumbnails may load slower for half a second or so.)
-  - **Edge caching is now in use:** we are now leveraging Vercel's edge function caching and `stale-while-revalidate` options, so you should experience extremely faster load speed for folder listings.) **Cache are valid for an hour on the edge.** Check: [🚀 Edge caching #407](https://github.com/spencerwooo/onedrive-vercel-index/discussions/407).
+  - **Edge caching is now in use:** we are now leveraging Vercel's edge function caching and `stale-while-revalidate` options, so you should experience extremely faster load speed for all API routes.) **Cache is valid for 60 seconds on the edge.** Check: [🚀 Edge caching #407](https://github.com/spencerwooo/onedrive-vercel-index/discussions/407).
 - 👨‍💻 Code highlighting: we dropped dependency `Prism.js`, syntax highlighting is now performed by `react-syntax-highlighter` (using `highlight.js` under-the-hood. Support for different languages are imported asynchronous (so you may see a slight delay before the code is actually highlighted).
 
   |                              Light                              |                             Dark                              |
