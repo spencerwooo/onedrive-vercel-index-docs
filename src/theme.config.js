@@ -33,6 +33,7 @@ export default {
   nextLinks: true,
   floatTOC: true,
   footer: true,
-  footerEditLink: 'Edit this page on GitHub',
+  defaultMenuCollapsed: true,
+  footerEditLink: ({ locale }) => locale === 'zh' ? '前往 GitHub 编辑此页' : 'Edit this page on GitHub',
   footerText: <>Built with love {new Date().getFullYear()} © Spencer Woo</>
 }
