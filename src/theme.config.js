@@ -28,7 +28,7 @@ export default {
   ),
   search: true,
   font: false,
-  unstable_stork: true,
+  unstable_flexsearch: true,
   prevLinks: true,
   nextLinks: true,
   floatTOC: true,

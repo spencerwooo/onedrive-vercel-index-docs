@@ -1,19 +1,19 @@
 {
   "index": {
     "title": "onedrive-vercel-index",
-    "type": "nav",
+    "type": "page",
     "hidden": true
   },
   "docs": {
     "title": "Docs",
-    "type": "nav"
+    "type": "page"
   },
   "blog": {
     "title": "Blog",
-    "type": "nav"
+    "type": "page"
   },
   "sponsor": {
     "title": "Sponsor",
-    "type": "nav"
+    "type": "page"
   }
 }
